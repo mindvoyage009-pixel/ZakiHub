@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Inspiration</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { background: rgba(255,255,255,0.95); padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 600px; width: 100%; text-align: center; }
+        h1 { color: #333; margin-bottom: 30px; font-size: 2em; }
+        .quote-box { background: #f8f9fa; padding: 30px; border-radius: 15px; margin: 20px 0; border-left: 5px solid #667eea; }
+        .quote-text { font-size: 1.3em; color: #555; font-style: italic; line-height: 1.6; }
+        .quote-author { margin-top: 15px; color: #888; font-weight: 600; }
+        .btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 15px 40px; font-size: 1.1em; border-radius: 50px; cursor: pointer; margin-top: 20px; transition: transform 0.3s; }
+        .btn:hover { transform: translateY(-2px); }
+        .footer { margin-top: 30px; color: #aaa; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Daily Inspiration</h1>
+        <div class="quote-box">
+            <div class="quote-text" id="quote">Click the button to discover wisdom...</div>
+            <div class="quote-author" id="author"></div>
+        </div>
+        <button class="btn" onclick="newQuote()">New Quote</button>
+        <div class="footer">© 2026 Daily Inspiration</div>
+    </div>
+    <script>
+        const quotes = [
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+            { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+            { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+            { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" }
+        ];
+        function newQuote() {
+            const q = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote').textContent = '"' + q.text + '"';
+            document.getElementById('author').textContent = '— ' + q.author;
+        }
+        newQuote();
+    </script>
+</body>
+</html>
