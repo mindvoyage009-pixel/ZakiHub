@@ -1,0 +1,96 @@
+name: 🤖 ZakiHub Auto-Update & Deploy
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+# ═══════════════════════════════════════════
+# إعدادات GitHub Pages (مطلوبة للـ deploy-pages)
+# ═══════════════════════════════════════════
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Install Dependencies
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      # 4. Restore Cache (Self-Healing)
+      - name: 💾 Restore Data Cache
+        uses: actions/cache@v4
+        with:
+          path: data/cache.json
+          key: zaki-cache-${{ github.run_id }}
+          restore-keys: zaki-cache-
+
+      # 5. Sync Data with Retry (3 محاولات)
+      - name: 🔄 Sync External Data
+        run: |
+          for i in 1 2 3; do
+            echo "🔄 محاولة $i من 3..."
+            node scripts/sync-data.js && break
+            echo "⚠️ فشلت المحاولة $i، انتظار 30 ثانية..."
+            sleep 30
+          done
+          if [ ! -f data/tools.json ]; then
+            echo "🛡️ فشلت كل المحاولات - استرجاع من الكاش المحلي"
+            cp data/cache.json data/tools.json || echo '{"tools":[]}' > data/tools.json
+          fi
+
+      # 6. Validate Data (بوابة الجودة)
+      - name: 🔍 Validate Data Integrity
+        run: node scripts/validate.js
+
+      # 7. Generate SEO Assets
+      - name: 🏗️ Generate SEO & Schema
+        run: node scripts/generate-schema.js
+
+      # 8. Build Astro Site
+      - name: 🚀 Build Astro Site
+        run: npm run build
+
+      # 9. Save Cache for Next Run
+      - name: 💾 Save Cache
+        if: always()
+        run: cp data/tools.json data/cache.json || true
+
+      # 10. Upload Build Artifact (مطلوب للـ deploy-pages)
+      - name: 📤 Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  # ═══════════════════════════════════════════
+  # مرحلة النشر المنفصلة (مطلوبة من GitHub)
+  # ═══════════════════════════════════════════
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 🌍 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
