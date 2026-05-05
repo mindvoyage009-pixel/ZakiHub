@@ -1,6 +1,6 @@
 ---
 // ═══════════════════════════════════════════════════════
-// ZAKIHUB MASTER LAYOUT v3.0
+// ZAKIHUB MASTER LAYOUT v3.0 - ENGLISH EDITION
 // Glassmorphism + Cyberpunk Light + Organic Animations
 // ═══════════════════════════════════════════════════════
 
@@ -12,8 +12,8 @@ export interface Props {
 }
 
 const { 
-  title = "ZakiHub 🧠 | دليل أدوات الذكاء الاصطناعي",
-  description = "اكتشف أفضل أدوات AI. تصنيفات ذكية، مقارنات تفاعلية، وتحديات يومية.",
+  title = "ZakiHub 🧠 | The Most Creative AI Tools Directory",
+  description = "Discover 50+ powerful AI tools. Smart categories, interactive comparisons, daily challenges. Join a million users!",
   image = "/og-image.jpg",
   type = "website"
 } = Astro.props;
@@ -22,7 +22,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
 ---
 
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,8 +32,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Fonts - English Premium -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   
   <!-- Icons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -41,7 +41,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
   <!-- Primary Meta -->
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="keywords" content="أدوات AI, ذكاء اصطناعي, ChatGPT, Midjourney, دليل AI" />
+  <meta name="keywords" content="AI tools, artificial intelligence, ChatGPT, Midjourney, AI directory, free tools" />
   <meta name="author" content="ZakiHub Team" />
   
   <!-- Open Graph -->
@@ -50,7 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL(image, canonicalURL)} />
-  <meta property="og:locale" content="ar_SA" />
+  <meta property="og:locale" content="en_US" />
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -62,10 +62,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
   
-  <!-- Styles -->
-<link rel="stylesheet" href="/css/lang-override.css" />
-<script src="/js/lang-override.js" defer></script>
+  <!-- Styles - Order matters! -->
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/lang-override.css" />
+  <link rel="stylesheet" href="/css/responsive-master.css" />
   
   <!-- Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -83,6 +83,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
   <!-- Zaki Engine -->
   <script src="/js/zaki-engine.js" defer></script>
   <script src="/js/dopamine.js" defer></script>
+  <script src="/js/lang-override.js" defer></script>
 </head>
 
 <body class="zaki-body">
@@ -104,38 +105,40 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
         <span class="version">v3.0</span>
       </a>
       
-      <div class="nav-links">
-        <a href="/" class="nav-link active" data-tooltip="الرئيسية">
+      <div class="nav-links" id="nav-links">
+        <a href="/" class="nav-link active" data-tooltip="Home">
           <span class="link-icon">🏠</span>
-          <span class="link-text">الرئيسية</span>
+          <span class="link-text">Home</span>
         </a>
-        <a href="/tools/" class="nav-link" data-tooltip="الأدوات">
+        <a href="/tools/" class="nav-link" data-tooltip="Tools">
           <span class="link-icon">🛠️</span>
-          <span class="link-text">الأدوات</span>
+          <span class="link-text">Tools</span>
         </a>
-        <a href="/game/" class="nav-link" data-tooltip="اللعبة">
+        <a href="/game.html" class="nav-link" data-tooltip="Game">
           <span class="link-icon">🎮</span>
-          <span class="link-text">اللعبة</span>
-          <span class="badge-new">جديد</span>
+          <span class="link-text">Game</span>
+          <span class="badge-new">NEW</span>
         </a>
-        <a href="/about/" class="nav-link" data-tooltip="من نحن">
+        <a href="/about/" class="nav-link" data-tooltip="About">
           <span class="link-icon">👥</span>
-          <span class="link-text">من نحن</span>
+          <span class="link-text">About</span>
         </a>
       </div>
       
       <div class="nav-actions">
-        <button class="btn-focus" id="focus-mode-btn" title="وضع التركيز">
+        <button class="btn-focus" id="focus-mode-btn" title="Focus Mode">
           <span>🎯</span>
         </button>
-        <button class="btn-zaki" id="zaki-toggle" title="تحدث مع ذاكي">
+        <button class="btn-zaki" id="zaki-toggle" title="Chat with Zaki">
           <span class="zaki-avatar">🤖</span>
           <span class="zaki-status online"></span>
         </button>
       </div>
       
-      <button class="mobile-menu-btn" id="mobile-menu">
-        <span></span><span></span><span></span>
+      <button class="mobile-menu-btn" id="mobile-menu" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </nav>
@@ -146,21 +149,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
       <div class="zaki-info">
         <span class="zaki-avatar-large" id="zaki-avatar">🤖</span>
         <div>
-          <h3>ذاكي</h3>
-          <p class="zaki-mood" id="zaki-mood">مستعد أساعدك! ✨</p>
+          <h3>Zaki</h3>
+          <p class="zaki-mood" id="zaki-mood">Ready to help! ✨</p>
         </div>
       </div>
-      <button class="btn-close" id="zaki-close">×</button>
+      <button class="btn-close" id="zaki-close" aria-label="Close panel">×</button>
     </div>
     <div class="zaki-chat" id="zaki-chat">
       <div class="chat-welcome">
-        <p>أهلاً! أنا ذاكي 🧠</p>
-        <p>سأرشدك لأفضل أدوات AI!</p>
+        <p>Hello! I'm Zaki 🧠</p>
+        <p>I'll guide you to the best AI tools!</p>
       </div>
     </div>
     <div class="zaki-input-area glass">
-      <input type="text" id="zaki-input" placeholder="اسألني عن أي أداة..." />
-      <button id="zaki-send">➤</button>
+      <input type="text" id="zaki-input" placeholder="Ask me about any tool..." aria-label="Chat input" />
+      <button id="zaki-send" aria-label="Send message">➤</button>
     </div>
   </aside>
   
@@ -169,24 +172,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
     <div class="hud-item" id="hud-streak">
       <span class="hud-icon">🔥</span>
       <span class="hud-value" id="streak-value">0</span>
-      <span class="hud-label">يوم</span>
+      <span class="hud-label">Days</span>
     </div>
     <div class="hud-item" id="hud-points">
       <span class="hud-icon">💎</span>
       <span class="hud-value" id="points-value">0</span>
-      <span class="hud-label">نقطة</span>
+      <span class="hud-label">Points</span>
     </div>
     <div class="hud-item" id="hud-level">
       <span class="hud-icon">⭐</span>
       <span class="hud-value" id="level-value">1</span>
-      <span class="hud-label">مستوى</span>
+      <span class="hud-label">Level</span>
     </div>
   </div>
   
   <!-- Mystery Box Button -->
-  <button class="mystery-box-btn" id="mystery-box" title="الصندوق الغامض!">
+  <button class="mystery-box-btn" id="mystery-box" title="Mystery Box!">
     <span class="box-icon">🎁</span>
-    <span class="box-timer" id="box-timer">جاهز!</span>
+    <span class="box-timer" id="box-timer">Ready!</span>
     <div class="box-glow"></div>
   </button>
   
@@ -201,12 +204,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
       <div class="footer-brand">
         <span class="logo-icon">🧠</span>
         <span>ZakiHub</span>
-        <p>دليل أدوات الذكاء الاصطناعي الأكثر إبداعاً</p>
+        <p>The Most Creative AI Tools Directory</p>
       </div>
       <div class="footer-links">
-        <a href="/privacy/">سياسة الخصوصية</a>
-        <a href="/about/">من نحن</a>
-        <a href="/contact/">اتصل بنا</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/about/">About Us</a>
+        <a href="/contact/">Contact</a>
       </div>
       <div class="footer-social">
         <a href="#" aria-label="Twitter">𝕏</a>
@@ -215,8 +218,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 ZakiHub. مبني بالـ ❤️ وكمية هائلة من الـ dopamine 🧠</p>
-      <p class="auto-status">🤖 يتم التحديث تلقائياً كل 3 ساعات</p>
+      <p>© 2026 ZakiHub. Built with ❤️ and massive amounts of dopamine 🧠</p>
+      <p class="auto-status">🤖 Auto-updates every 3 hours</p>
     </div>
   </footer>
   
@@ -227,7 +230,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.
   <div class="loading-overlay" id="loading-overlay">
     <div class="loader">
       <div class="loader-ring"></div>
-      <div class="loader-text">جاري التحميل...</div>
+      <div class="loader-text">Loading...</div>
     </div>
   </div>
   
