@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2026-05-05T23:00:00Z",
-  "totalTools": 52,
+  "totalTools": 20,
   "categories": [
     "Text & Writing",
     "Image Generation",
@@ -18,7 +18,7 @@
       "id": "chatgpt-4o",
       "name": "ChatGPT 4o",
       "category": "Text & Writing",
-      "description": "أذكى مساعد نصي في العالم. يفهم الصور، يبرمج، يكتب قصص، ويحلل بيانات.",
+      "description": "The smartest text assistant in the world. Understands images, codes, writes stories, and analyzes data.",
       "url": "https://chat.openai.com",
       "icon": "🧠",
       "rating": 4.9,
@@ -40,9 +40,9 @@
           "ratingCount": "200000000"
         }
       },
-      "features": ["صوت طبيعي", "رؤية بصرية", "برمجة", "ترجمة فورية"],
-      "pros": ["دقة عالية", "سرعة", "متعدد اللغات"],
-      "cons": ["يحتاج إنترنت", "النسخة المجانية محدودة"],
+      "features": ["Natural voice", "Vision", "Coding", "Instant translation"],
+      "pros": ["High accuracy", "Fast", "Multilingual"],
+      "cons": ["Requires internet", "Free version limited"],
       "screenshot": "https://openai.com/assets/chatgpt-screenshot.jpg",
       "addedDate": "2026-01-15"
     },
@@ -50,7 +50,7 @@
       "id": "midjourney-v7",
       "name": "Midjourney V7",
       "category": "Image Generation",
-      "description": "توليد صور خيالية بجودة سينمائية. الأفضل للفنانين والمصممين.",
+      "description": "Generate cinematic quality fantasy images. Best for artists and designers.",
       "url": "https://midjourney.com",
       "icon": "🎨",
       "rating": 4.8,
@@ -72,9 +72,9 @@
           "ratingCount": "20000000"
         }
       },
-      "features": ["توليد صور 4K", "تعديل بالمنطقة", "توسيع الصور", "أنماط فنية"],
-      "pros": ["جودة خرافية", "تفاصيل دقيقة", "مجتمع ضخم"],
-      "cons": ["مدفوع", "يحتاج Discord"],
+      "features": ["4K image generation", "Inpainting", "Outpainting", "Art styles"],
+      "pros": ["Legendary quality", "Fine details", "Huge community"],
+      "cons": ["Paid", "Requires Discord"],
       "screenshot": "https://midjourney.com/showcase.jpg",
       "addedDate": "2026-02-01"
     },
@@ -82,7 +82,7 @@
       "id": "claude-4",
       "name": "Claude 4",
       "category": "Text & Writing",
-      "description": "مساعد ذكي من Anthropic. يتفوق في الكتابة الطويلة والتحليل العميق.",
+      "description": "Smart assistant from Anthropic. Excels at long-form writing and deep analysis.",
       "url": "https://claude.ai",
       "icon": "📝",
       "rating": 4.8,
@@ -104,9 +104,9 @@
           "ratingCount": "50000000"
         }
       },
-      "features": ["سياق 200K", "كتابة طويلة", "تحليل ملفات", "أمان عالي"],
-      "pros": ["سياق ضخم", "أمان", "دقة في التحليل"],
-      "cons": ["لا يدعم الصور بعد"],
+      "features": ["200K context", "Long writing", "File analysis", "High safety"],
+      "pros": ["Massive context", "Safe", "Analytical precision"],
+      "cons": ["No image support yet"],
       "screenshot": "https://claude.ai/screenshot.jpg",
       "addedDate": "2026-03-10"
     },
@@ -114,7 +114,7 @@
       "id": "github-copilot",
       "name": "GitHub Copilot",
       "category": "Code Assistant",
-      "description": "مساعد البرمجة الأشهر. يكتب كود، يصلح أخطاء، ويشرح الأكواد.",
+      "description": "The most famous coding assistant. Writes code, fixes bugs, and explains code.",
       "url": "https://github.com/features/copilot",
       "icon": "💻",
       "rating": 4.7,
@@ -136,9 +136,9 @@
           "ratingCount": "15000000"
         }
       },
-      "features": ["إكمال تلقائي", "شرح الكود", "إنشاء دوال", "دعم 30+ لغة"],
-      "pros": ["سرعة فائقة", "تكامل مع VS Code", "دقة عالية"],
-      "cons": ["مدفوع", "أحياناً يخطئ"],
+      "features": ["Autocompletion", "Code explanation", "Function generation", "30+ languages"],
+      "pros": ["Blazing fast", "VS Code integration", "High accuracy"],
+      "cons": ["Paid", "Sometimes wrong"],
       "screenshot": "https://github.com/copilot-screenshot.jpg",
       "addedDate": "2026-01-20"
     },
@@ -146,7 +146,7 @@
       "id": "runway-ml",
       "name": "Runway ML",
       "category": "Video Creation",
-      "description": "تعديل وتوليد فيديو بالذكاء الاصطناعي. الأفضل للمبدعين.",
+      "description": "Edit and generate video with AI. Best for creators.",
       "url": "https://runwayml.com",
       "icon": "🎬",
       "rating": 4.6,
@@ -168,9 +168,9 @@
           "ratingCount": "5000000"
         }
       },
-      "features": ["توليد فيديو من نص", "تعديل بالفرشاة", "إزالة خلفية", "تأثيرات سينمائية"],
-      "pros": ["جودة احترافية", "سهل الاستخدام", "مجتمع نشط"],
-      "cons": ["بطيء أحياناً", "الجودة تعتمد على الخطة"],
+      "features": ["Text to video", "Brush editing", "Background removal", "Cinematic effects"],
+      "pros": ["Professional quality", "Easy to use", "Active community"],
+      "cons": ["Slow sometimes", "Quality depends on plan"],
       "screenshot": "https://runwayml.com/showcase.jpg",
       "addedDate": "2026-02-15"
     },
@@ -178,7 +178,7 @@
       "id": "elevenlabs-v3",
       "name": "ElevenLabs V3",
       "category": "Audio & Voice",
-      "description": "أفضل توليد صوت بشري طبيعي 100%. يدعم 29 لغة بـ 1000 صوت.",
+      "description": "Best human-like voice generation. Supports 29 languages with 1000 voices.",
       "url": "https://elevenlabs.io",
       "icon": "🎙️",
       "rating": 4.9,
@@ -200,9 +200,9 @@
           "ratingCount": "3000000"
         }
       },
-      "features": ["استنساخ صوت", "توليد موسيقى", "ترجمة صوتية", "تحكم في النبرة"],
-      "pros": ["طبيعي جداً", "لغات متعددة", "سريع"],
-      "cons": ["النسخة المجانية محدودة"],
+      "features": ["Voice cloning", "Music generation", "Voice translation", "Tone control"],
+      "pros": ["Extremely natural", "Multilingual", "Fast"],
+      "cons": ["Free version limited"],
       "screenshot": "https://elevenlabs.io/screenshot.jpg",
       "addedDate": "2026-01-05"
     },
@@ -210,7 +210,7 @@
       "id": "perplexity-ai",
       "name": "Perplexity AI",
       "category": "Research & Data",
-      "description": "محرك بحث ذكي يجيب بمصادر موثوقة. يحل محل Google للبحث العميق.",
+      "description": "Smart search engine with verified sources. Replaces Google for deep research.",
       "url": "https://perplexity.ai",
       "icon": "🔍",
       "rating": 4.7,
@@ -232,9 +232,9 @@
           "ratingCount": "30000000"
         }
       },
-      "features": ["بحث بالمصادر", "ملخصات", "أسئلة متابعة", "وضع Pro"],
-      "pros": ["دقة المصادر", "سرعة", "واجهة نظيفة"],
-      "cons": ["أحياناً يخطئ في المصادر"],
+      "features": ["Sourced search", "Summaries", "Follow-up questions", "Pro mode"],
+      "pros": ["Source accuracy", "Speed", "Clean interface"],
+      "cons": ["Sometimes wrong sources"],
       "screenshot": "https://perplexity.ai/screenshot.jpg",
       "addedDate": "2026-01-25"
     },
@@ -242,7 +242,7 @@
       "id": "notion-ai",
       "name": "Notion AI",
       "category": "Productivity",
-      "description": "ذكاء اصطناعي مدمج في Notion. يكتب، يلخص، وينظم ملاحظاتك.",
+      "description": "AI built into Notion. Writes, summarizes, and organizes your notes.",
       "url": "https://notion.so/product/ai",
       "icon": "📋",
       "rating": 4.5,
@@ -264,9 +264,9 @@
           "ratingCount": "40000000"
         }
       },
-      "features": ["تلخيص تلقائي", "كتابة مساعدة", "ترجمة", "توليد أفكار"],
-      "pros": ["تكامل مثالي", "سهل", "منظم"],
-      "cons": ["مدفوع", "يحتاج Notion"],
+      "features": ["Auto summary", "Writing assistant", "Translation", "Idea generation"],
+      "pros": ["Perfect integration", "Easy", "Organized"],
+      "cons": ["Paid", "Requires Notion"],
       "screenshot": "https://notion.so/ai-screenshot.jpg",
       "addedDate": "2026-02-20"
     },
@@ -274,7 +274,7 @@
       "id": "stable-diffusion-xl",
       "name": "Stable Diffusion XL",
       "category": "Image Generation",
-      "description": "نموذج مفتوح المصدر لتوليد الصور. الأفضل للمطورين والمحترفين.",
+      "description": "Open source image generation model. Best for developers and professionals.",
       "url": "https://stability.ai",
       "icon": "🖼️",
       "rating": 4.6,
@@ -296,9 +296,9 @@
           "ratingCount": "50000000"
         }
       },
-      "features": ["مجاني تماماً", "يعمل محلياً", "قابل للتخصيص", "نماذج متعددة"],
-      "pros": ["مجاني", "خصوصية", "مرن"],
-      "cons": ["يحتاج جهاز قوي", "تعلم منحنى"],
+      "features": ["Completely free", "Runs locally", "Customizable", "Multiple models"],
+      "pros": ["Free", "Private", "Flexible"],
+      "cons": ["Needs powerful hardware", "Learning curve"],
       "screenshot": "https://stability.ai/screenshot.jpg",
       "addedDate": "2026-01-01"
     },
@@ -306,7 +306,7 @@
       "id": "suno-ai",
       "name": "Suno AI",
       "category": "Audio & Voice",
-      "description": "توليد موسيقى كاملة بالكلمات والألحان. أنشئ أغنيتك في ثوانٍ.",
+      "description": "Generate complete music with lyrics and melodies. Create your song in seconds.",
       "url": "https://suno.ai",
       "icon": "🎵",
       "rating": 4.8,
@@ -328,9 +328,9 @@
           "ratingCount": "10000000"
         }
       },
-      "features": ["توليد أغاني", "أنماط متعددة", "كتابة كلمات", "تعديل"],
-      "pros": ["جودة عالية", "سهل جداً", "مجاني جزئياً"],
-      "cons": ["حقوق ملكية غير واضحة"],
+      "features": ["Song generation", "Multiple styles", "Lyrics writing", "Editing"],
+      "pros": ["High quality", "Very easy", "Partially free"],
+      "cons": ["Copyright unclear"],
       "screenshot": "https://suno.ai/screenshot.jpg",
       "addedDate": "2026-03-01"
     },
@@ -338,7 +338,7 @@
       "id": "cursor-ai",
       "name": "Cursor",
       "category": "Code Assistant",
-      "description": "محرر أكواد ذكي يتفوق على VS Code. يفهم مشروعك كاملاً.",
+      "description": "Smart code editor that beats VS Code. Understands your entire project.",
       "url": "https://cursor.sh",
       "icon": "✨",
       "rating": 4.8,
@@ -360,9 +360,9 @@
           "ratingCount": "2000000"
         }
       },
-      "features": ["فهم المشروع كامل", "تعديل متعدد الملفات", "دردشة جانبية", "أوامر صوتية"],
-      "pros": ["سريع", "ذكي جداً", "مجاني جزئياً"],
-      "cons": ["ثقيل على الجهاز"],
+      "features": ["Full project understanding", "Multi-file editing", "Side chat", "Voice commands"],
+      "pros": ["Fast", "Very smart", "Partially free"],
+      "cons": ["Heavy on system"],
       "screenshot": "https://cursor.sh/screenshot.jpg",
       "addedDate": "2026-02-28"
     },
@@ -370,7 +370,7 @@
       "id": "heygen",
       "name": "HeyGen",
       "category": "Video Creation",
-      "description": "توليد أفاتار فيديو متحدث. الأفضل للتسويق والتعليم.",
+      "description": "Generate talking avatar videos. Best for marketing and education.",
       "url": "https://heygen.com",
       "icon": "🎭",
       "rating": 4.5,
@@ -392,9 +392,9 @@
           "ratingCount": "3000000"
         }
       },
-      "features": ["أفاتار واقعي", "ترجمة صوتية", "قوالب جاهزة", "API"],
-      "pros": ["جودة الفيديو", "سهل", "لغات متعددة"],
-      "cons": ["غالي", "دقائق محدودة"],
+      "features": ["Realistic avatar", "Voice translation", "Ready templates", "API"],
+      "pros": ["Video quality", "Easy", "Multilingual"],
+      "cons": ["Expensive", "Limited minutes"],
       "screenshot": "https://heygen.com/screenshot.jpg",
       "addedDate": "2026-01-30"
     },
@@ -402,7 +402,7 @@
       "id": "gamma-app",
       "name": "Gamma",
       "category": "Productivity",
-      "description": "توليد عروض تقديمية بتصميم احترافي من نص فقط.",
+      "description": "Generate professional presentations from text only.",
       "url": "https://gamma.app",
       "icon": "📊",
       "rating": 4.6,
@@ -424,8 +424,235 @@
           "ratingCount": "5000000"
         }
       },
-      "features": ["توليد شرائح", "تصاميم ذكية", "تفاعلية", "تصدير"],
-      "pros": ["سريع", "جميل", "سهل"],
-      "cons": ["تخصيص محدود"],
+      "features": ["Slide generation", "Smart designs", "Interactive", "Export"],
+      "pros": ["Fast", "Beautiful", "Easy"],
+      "cons": ["Limited customization"],
       "screenshot": "https://gamma.app/screenshot.jpg",
-      "addedDate":
+      "addedDate": "2026-02-10"
+    },
+    {
+      "id": "leonardo-ai",
+      "name": "Leonardo AI",
+      "category": "Image Generation",
+      "description": "Image generation for games and design. Custom models for digital art.",
+      "url": "https://leonardo.ai",
+      "icon": "🎮",
+      "rating": 4.7,
+      "users": "15M+",
+      "pricing": "Freemium",
+      "tags": ["image", "gaming", "art", "3D-textures"],
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "ratingCount": "15000000"
+        }
+      },
+      "features": ["Custom models", "Texture generation", "Image editing", "Community"],
+      "pros": ["Generous free tier", "Professional models", "Fast"],
+      "cons": ["Sometimes slow"],
+      "screenshot": "https://leonardo.ai/screenshot.jpg",
+      "addedDate": "2026-01-12"
+    },
+    {
+      "id": "hugging-face",
+      "name": "Hugging Face",
+      "category": "Code Assistant",
+      "description": "The largest open model platform. 1M+ free AI models.",
+      "url": "https://huggingface.co",
+      "icon": "🤗",
+      "rating": 4.9,
+      "users": "5M+",
+      "pricing": "Free",
+      "tags": ["models", "open-source", "community", "NLP"],
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "5000000"
+        }
+      },
+      "features": ["1M+ models", "Interactive Spaces", "Datasets", "Courses"],
+      "pros": ["Free", "Huge community", "Educational"],
+      "cons": ["Requires technical knowledge"],
+      "screenshot": "https://huggingface.co/screenshot.jpg",
+      "addedDate": "2026-01-01"
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "category": "Audio & Voice",
+      "description": "Edit video and audio with text. Delete a word from text = delete it from audio.",
+      "url": "https://descript.com",
+      "icon": "🎤",
+      "rating": 4.6,
+      "users": "4M+",
+      "pricing": "Freemium",
+      "tags": ["audio", "video", "editing", "transcription"],
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "AudioApplication",
+        "operatingSystem": "Desktop",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.6",
+          "ratingCount": "4000000"
+        }
+      },
+      "features": ["Text-based editing", "Voice cloning", "Filler word removal", "Screen recording"],
+      "pros": ["Revolutionary", "Easy", "Professional"],
+      "cons": ["Heavy", "Expensive"],
+      "screenshot": "https://descript.com/screenshot.jpg",
+      "addedDate": "2026-02-05"
+    },
+    {
+      "id": "figma-ai",
+      "name": "Figma AI",
+      "category": "3D & Design",
+      "description": "AI inside Figma. Generates designs, writes text, and organizes layouts.",
+      "url": "https://figma.com/ai",
+      "icon": "🎯",
+      "rating": 4.5,
+      "users": "10M+",
+      "pricing": "Freemium",
+      "tags": ["design", "UI/UX", "prototyping", "collaboration"],
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "ratingCount": "10000000"
+        }
+      },
+      "features": ["UI generation", "Text writing", "Auto layout", "Prototyping"],
+      "pros": ["Perfect integration", "Easy", "Collaborative"],
+      "cons": ["Limited in free version"],
+      "screenshot": "https://figma.com/ai-screenshot.jpg",
+      "addedDate": "2026-03-05"
+    },
+    {
+      "id": "make-com",
+      "name": "Make (Integromat)",
+      "category": "Automation",
+      "description": "Automate workflows with no-code. Connect 2000+ apps with drag and drop.",
+      "url": "https://make.com",
+      "icon": "⚡",
+      "rating": 4.7,
+      "users": "500K+",
+      "pricing": "Freemium",
+      "tags": ["automation", "no-code", "integration", "workflow"],
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "ratingCount": "500000"
+        }
+      },
+      "features": ["2000+ apps", "Visual scenarios", "Webhooks", "Error handling"],
+      "pros": ["Flexible", "Powerful", "Beautiful UI"],
+      "cons": ["Learning curve"],
+      "screenshot": "https://make.com/screenshot.jpg",
+      "addedDate": "2026-01-18"
+    },
+    {
+      "id": "kahoot-ai",
+      "name": "Kahoot! AI",
+      "category": "Education",
+      "description": "Generate interactive quizzes with AI. Learning became a game.",
+      "url": "https://kahoot.com",
+      "icon": "🎓",
+      "rating": 4.4,
+      "users": "50M+",
+      "pricing": "Freemium",
+      "tags": ["education", "quiz", "gamification", "classroom"],
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.4",
+          "ratingCount": "50000000"
+        }
+      },
+      "features": ["Question generation", "Group games", "Analytics", "Templates"],
+      "pros": ["Fun", "Interactive", "Free"],
+      "cons": ["Ads in free version"],
+      "screenshot": "https://kahoot.com/screenshot.jpg",
+      "addedDate": "2026-02-25"
+    },
+    {
+      "id": "meshy-ai",
+      "name": "Meshy AI",
+      "category": "3D & Design",
+      "description": "Generate 3D models from text or image. A revolution in 3D design.",
+      "url": "https://meshy.ai",
+      "icon": "🧊",
+      "rating": 4.6,
+      "users": "1M+",
+      "pricing": "Freemium",
+      "tags": ["3D", "modeling", "generation", "design"],
+      "schema": {
+        "@type": "SoftwareApplication",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.6",
+          "ratingCount": "1000000"
+        }
+      },
+      "features": ["Text to 3D", "Image to 3D", "Texturing", "Animation"],
+      "pros": ["Fast", "Partially free", "High quality"],
+      "cons": ["Limited details"],
+      "screenshot": "https://meshy.ai/screenshot.jpg",
+      "addedDate": "2026-03-15"
+    }
+  ]
+}
