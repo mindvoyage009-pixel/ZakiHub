@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - الصفحة غير موجودة | ZakiHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050510;
+      --green: #00ff88;
+      --cyan: #00ccff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg);
+      color: #e0e0ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .error-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+    p { opacity: 0.7; margin-bottom: 2rem; max-width: 400px; line-height: 1.8; }
+    .btn {
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn:hover { transform: scale(1.05); }
+    .suggestions {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .suggestion {
+      padding: 0.75rem 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .suggestion:hover {
+      border-color: var(--green);
+      background: rgba(0,255,136,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="error-icon">🤖💨</div>
+  <div class="error-code">404</div>
+  <h1>ذاكي ضاع! 😅</h1>
+  <p>
+    يبدو إن الصفحة اللي بتدور عليها مش موجودة.<br>
+    بس متقلقش، ذاكي هيرشدك لمكان أحسن!
+  </p>
+  <a href="/" class="btn">
+    <span>🏠</span>
+    ارجع للرئيسية
+  </a>
+  
+  <div class="suggestions">
+    <a href="/tools/" class="suggestion">🛠️ تصفح الأدوات</a>
+    <a href="/game.html" class="suggestion">🎮 العب شوية</a>
+    <a href="/" class="suggestion">🔍 ابحث من جديد</a>
+  </div>
+  
+  <script>
+    // Zaki says something funny
+    const messages = [
+      'ذاكي: "ده مش الطريق للكنز!" 🗺️',
+      'ذاكي: "جرب تدور في فئة تانية!" 🔍',
+      'ذاكي: "404 يعني: اكتشف حاجة جديدة!" ✨'
+    ];
+    console.log(messages[Math.floor(Math.random() * messages.length)]);
+  </script>
+</body>
+</html>
