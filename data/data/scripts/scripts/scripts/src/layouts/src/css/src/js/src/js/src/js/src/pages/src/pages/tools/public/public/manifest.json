@@ -1,0 +1,51 @@
+{
+  "name": "ZakiHub - دليل أدوات الذكاء الاصطناعي",
+  "short_name": "ZakiHub",
+  "description": "أكبر دليل تفاعلي لأدوات AI. اكتشف، العب، تنافس، واكسب مكافآت!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050510",
+  "theme_color": "#00ff88",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "education", "utilities"],
+  "lang": "ar",
+  "dir": "rtl",
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "الأدوات",
+      "short_name": "أدوات",
+      "description": "تصفح أدوات AI",
+      "url": "/tools/",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "اللعبة",
+      "short_name": "لعبة",
+      "description": "Zaki's Tool Run",
+      "url": "/game.html",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}
