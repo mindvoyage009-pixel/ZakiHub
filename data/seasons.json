@@ -1,0 +1,39 @@
+{
+  "currentSeason": {
+    "name": "ربيع الذكاء 2026",
+    "theme": "spring-ai",
+    "startDate": "2026-03-20",
+    "endDate": "2026-06-20",
+    "colors": {
+      "primary": "#00ff88",
+      "secondary": "#ff6b9d",
+      "accent": "#ffd700"
+    },
+    "specialEvents": [
+      {
+        "name": "أسبوع المبرمجين",
+        "date": "2026-05-10",
+        "description": "خصومات على أدوات البرمجة + تحديات يومية",
+        "bonusMultiplier": 2
+      },
+      {
+        "name": "يوم المصممين العالمي",
+        "date": "2026-04-27",
+        "description": "اكتشف أدوات التصميم واربح شارة المصمم",
+        "bonusMultiplier": 1.5
+      }
+    ],
+    "exclusiveRewards": [
+      {"type": "avatar", "name": "🌸 زاكي الربيع", "unlockCondition": "زيارة 5 أيام في الأسبوع"},
+      {"type": "badge", "name": "🌱 باذر المعرفة", "unlockCondition": "اكتشف 20 أداة جديدة"}
+    ]
+  },
+  "upcomingSeasons": [
+    {
+      "name": "صيف الابتكار 2026",
+      "theme": "summer-innovation",
+      "startDate": "2026-06-21",
+      "preview": "تحديات عالمية + بطولات أسبوعية"
+    }
+  ]
+}
