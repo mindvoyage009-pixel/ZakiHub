@@ -1,0 +1,22 @@
+{
+  "lastUpdated": "2026-05-05T23:00:00Z",
+  "trendingTools": [
+    {"id": "cursor-ai", "rank": 1, "change": "+5", "searches": "2.1M"},
+    {"id": "suno-ai", "rank": 2, "change": "+3", "searches": "1.8M"},
+    {"id": "meshy-ai", "rank": 3, "change": "+12", "searches": "950K"},
+    {"id": "chatgpt-4o", "rank": 4, "change": "0", "searches": "50M"},
+    {"id": "elevenlabs-v3", "rank": 5, "change": "+2", "searches": "800K"}
+  ],
+  "trendingCategories": [
+    {"name": "Code Assistant", "growth": "+45%", "color": "#00ff88"},
+    {"name": "3D & Design", "growth": "+38%", "color": "#ff00ff"},
+    {"name": "Audio & Voice", "growth": "+22%", "color": "#00ccff"}
+  ],
+  "hotSearches": [
+    "أفضل أداة كتابة عربي",
+    "توليد فيديو مجاني",
+    "برمجة بالذكاء الاصطناعي",
+    "استنساخ صوتي",
+    "تصميم 3D سريع"
+  ]
+}
