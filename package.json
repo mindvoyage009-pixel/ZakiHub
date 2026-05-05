@@ -1,41 +1,26 @@
 {
   "name": "zakihub",
   "version": "3.0.0",
-  "description": "ZakiHub - The Most Addictive AI Tools Directory Ever Built. Self-healing, dopamine-driven, and 100% free forever.",
+  "description": "ZakiHub - The Most Addictive AI Tools Directory Ever Built",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "sync:data": "node scripts/sync-data.js",
+    "sync": "node scripts/sync-data.js",
     "validate": "node scripts/validate.js",
-    "generate-schema": "node scripts/generate-schema.js"
+    "schema": "node scripts/generate-schema.js"
   },
   "dependencies": {
     "astro": "^5.0.0",
-    "@astrojs/sitemap": "^3.2.0",
-    "sharp": "^0.33.0"
+    "@astrojs/sitemap": "^3.2.0"
   },
   "devDependencies": {
-    "node-fetch": "^3.3.2",
-    "fs-extra": "^11.2.0"
+    "@types/node": "^20.0.0"
   },
-  "keywords": [
-    "ai-tools",
-    "directory",
-    "gamification",
-    "dopamine-engine",
-    "self-healing",
-    "pwa",
-    "seo",
-    "schema-org"
-  ],
+  "keywords": ["ai-tools", "directory", "gamification", "pwa", "seo"],
   "author": "Zaki Team",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/zakihub.git"
-  },
   "engines": {
     "node": ">=20.0.0"
   }
