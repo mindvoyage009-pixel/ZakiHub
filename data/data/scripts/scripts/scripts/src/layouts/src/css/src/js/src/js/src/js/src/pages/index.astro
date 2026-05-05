@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// جلب البيانات
+let tools = [];
+let categories = [];
+let trending = [];
+let seasons = {};
+
+try {
+  const toolsData = await fetch(new URL('../../data/tools.json', import.meta.url));
+  const t = await toolsData.json();
+  tools = t.tools || [];
+  categories = t.categories || [];
+} catch (e) {
+  tools = [];
+  categories = [];
+}
+
+try {
+  const trendData = await fetch(new URL('../../data/trending.json', import.meta.url));
+  trending = await trendData.json();
+} catch (e) {
+  trending = { trendingTools: [], trendingCategories: [], hotSearches: [] };
+}
+
+try {
+  const seasonData = await fetch(new URL('../../data/seasons.json', import.meta.url));
+  seasons = await seasonData.json();
+} catch (e) {
+  seasons = { currentSeason: { name: '', exclusiveRewards: [] } };
+}
+
+const featuredTools = tools.slice(0, 6);
+const totalUsers = "1.2M+";
+const totalTools = tools.length;
+---
+
+<Layout 
+  title="ZakiHub 🧠 | دليل أدوات الذكاء الاصطناعي الأكثر إبداعاً"
+  description="اكتشف أفضل 50+ أداة AI مجانية ومدفوعة. تصنيفات ذكية، مقارنات تفاعلية، وتحديات يومية. انضم لمليون مستخدم!"
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="live-dot"></span>
+      <span>مباشر — {tools.length} أداة محدثة الآن</span>
+    </div>
+    
+    <h1>
+      اكتشف عالم<br />
+      <span class="gradient-text">الذكاء الاصطناعي</span><br />
+      بأسلوب جديد
+    </h1>
+    
+    <p class="hero-subtitle">
+      دليل تفاعلي يكبر معاك. اكتشف أدوات AI خارقة، العب، تنافس، واكسب مكافآت حقيقية. 
+      مجاني 100% للأبد.
+    </p>
+    
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-value">{totalTools}+</div>
+        <div class="stat-label">أداة</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">{totalUsers}</div>
+        <div class="stat-label">مستخدم</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">4.9</div>
+        <div class="stat-label">تقييم</div>
+      </div>
+    </div>
+    
+    <div class="hero-cta">
+      <a href="#tools" class="btn-primary">
+        <span>🚀</span>
+        ابدأ الاستكشاف
+      </a>
+      <a href="/game/" class="btn-secondary">
+        <span>🎮</span>
+        العب الآن
+      </a>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section class="search-section">
+    <span class="search-icon">🔍</span>
+    <input 
+      type="text" 
+      class="search-bar" 
+      placeholder="ابحث عن أداة AI... (جرب: 'مجاني' أو 'برمجة')" 
+      aria-label="البحث في الأدوات"
+    />
+  </section>
+
+  <!-- Season Banner -->
+  {seasons.currentSeason && (
+    <section class="season-banner glass" style="margin-bottom: 2rem; padding: 1.5rem; border-radius: 24px; text-align: center;">
+      <h3 style="color: var(--neon-gold); font-size: 1.3rem; margin-bottom: 0.5rem;">
+        🌸 {seasons.currentSeason.name}
+      </h3>
+      <p style="opacity: 0.8; font-size: 0.9rem;">
+        {seasons.currentSeason.specialEvents?.[0]?.description || 'أحداث موسمية حصرية!'}
+      </p>
+    </section>
+  )}
+
+  <!-- Categories -->
+  <section id="categories">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span>📂</span>
+        التصنيفات
+      </h2>
+    </div>
+    
+    <div class="categories-grid">
+      {categories.map((cat, i) => {
+        const icons = ['📝', '🎨', '💻', '🎬', '🎙️', '🔍', '📋', '🎯', '⚡', '🎓'];
+        const colors = ['#00ff88', '#ff6b9d', '#00ccff', '#ffd700', '#b829dd', '#ff8c00', '#00ffcc', '#ff0066', '#66ff00', '#cc00ff'];
+        const count = tools.filter(t => t.category === cat).length;
+        const slug = cat.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        
+        return (
+          <a href={`/tools/${slug}/`} class="category-card" data-category={cat}>
+            <span class="category-icon" style={`color: ${colors[i % colors.length]}`}>
+              {icons[i % icons.length]}
+            </span>
+            <div class="category-name">{cat}</div>
+            <div class="category-count">{count} أداة</div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Trending -->
+  <section class="trending-section" id="trending">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span>🔥</span>
+        الأكثر رواجاً
+      </h2>
+      <span class="live-indicator">
+        <span class="live-dot"></span>
+        مباشر
+      </span>
+    </div>
+    
+    <div class="tools-grid">
+      {trending.trendingTools?.map((trend, i) => {
+        const tool = tools.find(t => t.id === trend.id) || tools[i];
+        if (!tool) return null;
+        
+        return (
+          <article class="tool-card" data-tool-id={tool.id}>
+            <div class="tool-header">
+              <span class="tool-icon">{tool.icon}</span>
+              <div class="tool-info">
+                <h3 class="tool-name">{tool.name}</h3>
+                <span class="tool-category">{tool.category}</span>
+              </div>
+              <span style="font-size: 1.5rem;">{i === 0 ? '👑' : i === 1 ? '🥈' : i === 2 ? '🥉' : ''}</span>
+            </div>
+            <p class="tool-desc">{tool.description}</p>
+            <div class="tool-meta">
+              <span class="tool-rating">
+                <span>⭐</span>
+                {tool.rating}
+              </span>
+              <span class="tool-users">{tool.users}</span>
+              <span class={`tool-pricing pricing-${tool.pricing.toLowerCase()}`}>
+                {tool.pricing === 'Free' ? 'مجاني' : tool.pricing === 'Freemium' ? 'مجاني/مدفوع' : 'مدفوع'}
+              </span>
+            </div>
+            <div class="tool-actions">
+              <a href={tool.url} target="_blank" rel="noopener" class="btn-tool" onclick={`if(window.dopamine) window.dopamine.addPoints(5, 'زيارة أداة')`}>
+                جربها ⚡
+              </a>
+              <a href={`/tools/${tool.id}/`} class="btn-tool">
+                التفاصيل 🔍
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Featured Tools -->
+  <section id="tools">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span>✨</span>
+        أدوات مميزة
+      </h2>
+    </div>
+    
+    <div class="tools-grid">
+      {featuredTools.map(tool => (
+        <article class="tool-card" data-tool-id={tool.id}>
+          <div class="tool-header">
+            <span class="tool-icon">{tool.icon}</span>
+            <div class="tool-info">
+              <h3 class="tool-name">{tool.name}</h3>
+              <span class="tool-category">{tool.category}</span>
+            </div>
+          </div>
+          <p class="tool-desc">{tool.description}</p>
+          <div class="tool-meta">
+            <span class="tool-rating">
+              <span>⭐</span>
+              {tool.rating}
+            </span>
+            <span class="tool-users">{tool.users}</span>
+            <span class={`tool-pricing pricing-${tool.pricing.toLowerCase()}`}>
+              {tool.pricing === 'Free' ? 'مجاني' : tool.pricing === 'Freemium' ? 'مجاني/مدفوع' : 'مدفوع'}
+            </span>
+          </div>
+          <div class="tool-actions">
+            <a href={tool.url} target="_blank" rel="noopener" class="btn-tool">
+              جربها ⚡
+            </a>
+            <a href={`/tools/${tool.id}/`} class="btn-tool">
+              التفاصيل 🔍
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/tools/" class="btn-primary" style="display: inline-flex;">
+        <span>👁️</span>
+        عرض كل الأدوات ({tools.length})
+      </a>
+    </div>
+  </section>
+
+  <!-- Hot Searches -->
+  {trending.hotSearches && trending.hotSearches.length > 0 && (
+    <section style="margin: 3rem 0;">
+      <h3 style="font-size: 1.2rem; margin-bottom: 1rem; opacity: 0.8;">
+        🔥 عمليات البحث الشائعة
+      </h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        {trending.hotSearches.map(search => (
+          <button 
+            class="btn-secondary" 
+            style="font-size: 0.85rem; padding: 0.5rem 1rem;"
+            onclick={`document.querySelector('.search-bar').value='${search}'; document.querySelector('.search-bar').dispatchEvent(new Event('input'))`}
+          >
+            {search}
+          </button>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Leaderboard Preview -->
+  <section style="margin: 3rem 0;">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span>🏆</span>
+        لوحة الصدارة
+      </h2>
+    </div>
+    <div class="leaderboard">
+      <div class="leader-item">
+        <span class="leader-rank rank-1">1</span>
+        <span class="leader-name">ZakiMaster</span>
+        <span class="leader-score">15,000</span>
+      </div>
+      <div class="leader-item">
+        <span class="leader-rank rank-2">2</span>
+        <span class="leader-name">AI_Explorer</span>
+        <span class="leader-score">12,300</span>
+      </div>
+      <div class="leader-item">
+        <span class="leader-rank rank-3">3</span>
+        <span class="leader-name">CodeNinja</span>
+        <span class="leader-score">9,800</span>
+      </div>
+      <div class="leader-item">
+        <span class="leader-rank rank-other">4</span>
+        <span class="leader-name">PixelArtist</span>
+        <span class="leader-score">8,500</span>
+      </div>
+      <div class="leader-item" style="border: 1px solid var(--neon-green); background: rgba(0,255,136,0.05);">
+        <span class="leader-rank rank-other">?</span>
+        <span class="leader-name" style="color: var(--neon-green);">أنت</span>
+        <span class="leader-score" id="leaderboard-me">0</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="text-align: center; padding: 4rem 0; margin: 3rem 0; background: var(--bg-glass); border-radius: 32px; border: 1px solid var(--border-glow);">
+    <h2 style="font-size: 2rem; margin-bottom: 1rem;">
+      جاهز تبدأ رحلتك؟ 🚀
+    </h2>
+    <p style="opacity: 0.7; margin-bottom: 2rem;">
+      انضم لمليون مستخدم يكتشفون أدوات AI كل يوم
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="/game/" class="btn-primary" style="font-size: 1.1rem;">
+        <span>🎮</span>
+        العب Zaki's Tool Run
+      </a>
+      <a href="https://github.com/YOUR_USERNAME/zakihub" target="_blank" class="btn-secondary" style="font-size: 1.1rem;">
+        <span>⭐</span>
+        نجمة على GitHub
+      </a>
+    </div>
+  </section>
+
+  <script>
+    // تحديث نقاط المستخدم في لوحة الصدارة
+    const points = localStorage.getItem('zaki-points') || 0;
+    const meEl = document.getElementById('leaderboard-me');
+    if (meEl) meEl.textContent = parseInt(points).toLocaleString();
+  </script>
+</Layout>
