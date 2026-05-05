@@ -1,0 +1,449 @@
+/* ═══════════════════════════════════════════════════════
+   ZAKIHUB ENGLISH OVERRIDE v3.0
+   Complete language flip + Premium English Fonts
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── Font Import ─── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ─── Root Override ─── */
+:root {
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  
+  /* Flip direction to LTR */
+  --dir: ltr;
+  --align-start: left;
+  --align-end: right;
+}
+
+/* ─── Base Reset ─── */
+html {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+body {
+  font-family: var(--font-main);
+  direction: ltr !important;
+  text-align: left !important;
+  letter-spacing: -0.01em;
+  word-spacing: 0.02em;
+}
+
+/* ─── Typography Enhancement ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-align: left !important;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.hero-subtitle {
+  font-family: var(--font-main);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+/* ─── Navigation ─── */
+.zaki-nav {
+  direction: ltr !important;
+}
+
+.nav-container {
+  flex-direction: row !important;
+}
+
+.logo {
+  flex-direction: row !important;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  flex-direction: row !important;
+}
+
+.nav-link {
+  flex-direction: row !important;
+  text-align: left !important;
+}
+
+/* ─── Hero Stats ─── */
+.hero-stats {
+  direction: ltr !important;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+/* ─── Search ─── */
+.search-section {
+  direction: ltr !important;
+}
+
+.search-bar {
+  text-align: left !important;
+  padding-left: 50px !important;
+  padding-right: 1.5rem !important;
+  font-family: var(--font-main);
+}
+
+.search-icon {
+  left: 1.5rem !important;
+  right: auto !important;
+}
+
+/* ─── Categories ─── */
+.categories-grid {
+  direction: ltr !important;
+}
+
+.category-card {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.category-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* ─── Tool Cards ─── */
+.tools-grid {
+  direction: ltr !important;
+}
+
+.tool-card {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.tool-header {
+  flex-direction: row !important;
+}
+
+.tool-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.tool-category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tool-meta {
+  flex-direction: row !important;
+}
+
+.tool-actions {
+  flex-direction: row !important;
+}
+
+/* ─── Leaderboard ─── */
+.leaderboard {
+  direction: ltr !important;
+}
+
+.leader-item {
+  flex-direction: row !important;
+  text-align: left !important;
+}
+
+.leader-rank {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+.leader-score {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* ─── Footer ─── */
+.zaki-footer {
+  direction: ltr !important;
+}
+
+.footer-content {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.footer-brand {
+  text-align: left !important;
+}
+
+.footer-links {
+  text-align: left !important;
+}
+
+.footer-links a {
+  text-align: left !important;
+}
+
+.footer-social {
+  flex-direction: row !important;
+}
+
+.footer-bottom {
+  text-align: center !important;
+}
+
+/* ─── Zaki Panel ─── */
+.zaki-panel {
+  left: auto !important;
+  right: 1.5rem !important;
+  direction: ltr !important;
+}
+
+.zaki-header {
+  flex-direction: row !important;
+}
+
+.zaki-info {
+  flex-direction: row !important;
+}
+
+.zaki-chat {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.chat-message {
+  text-align: left !important;
+}
+
+.chat-message.user {
+  align-self: flex-end !important;
+  border-bottom-right-radius: 4px !important;
+  border-bottom-left-radius: 16px !important;
+}
+
+.chat-message.zaki {
+  align-self: flex-start !important;
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+.zaki-input-area {
+  flex-direction: row !important;
+}
+
+.zaki-input-area input {
+  text-align: left !important;
+}
+
+/* ─── Dopamine HUD ─── */
+.dopamine-hud {
+  right: auto !important;
+  left: 1.5rem !important;
+  direction: ltr !important;
+}
+
+.hud-item {
+  flex-direction: row !important;
+}
+
+.hud-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+/* ─── Mystery Box ─── */
+.mystery-box-btn {
+  left: auto !important;
+  right: 2rem !important;
+}
+
+/* ─── Buttons ─── */
+.btn-primary, .btn-secondary, .btn-tool {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  flex-direction: row !important;
+}
+
+/* ─── Toast ─── */
+.toast-container {
+  right: auto !important;
+  left: 2rem !important;
+}
+
+.toast {
+  text-align: left !important;
+  direction: ltr !important;
+  border-left: none !important;
+  border-right: 3px solid;
+}
+
+.toast.success { border-right-color: var(--neon-green); }
+.toast.warning { border-right-color: var(--neon-gold); }
+.toast.error { border-right-color: var(--neon-pink); }
+.toast.info { border-right-color: var(--neon-cyan); }
+
+/* ─── Breadcrumb ─── */
+nav[aria-label="breadcrumb"],
+nav:has(a[href="/"]) {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+nav a {
+  direction: ltr !important;
+}
+
+/* ─── Section Headers ─── */
+.section-header {
+  flex-direction: row !important;
+  text-align: left !important;
+}
+
+.section-title {
+  flex-direction: row !important;
+  text-align: left !important;
+}
+
+/* ─── Season Banner ─── */
+.season-banner {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* ─── Hot Searches ─── */
+.hot-searches {
+  direction: ltr !important;
+}
+
+/* ─── CTA Section ─── */
+section:has(.btn-primary) {
+  text-align: left !important;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(0, 255, 136, 0.3);
+  color: white;
+}
+
+/* ─── Monospace Elements ─── */
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+/* ─── Numbers & Stats ─── */
+.stat-value, .hud-value, .leader-score, .tool-rating {
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Smooth Scrolling ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Focus Visible ─── */
+*:focus-visible {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}
+
+/* ─── Mobile Menu ─── */
+.mobile-menu-btn {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .dopamine-hud {
+    left: 0.5rem !important;
+    right: auto !important;
+  }
+  
+  .zaki-panel {
+    left: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+  
+  .mystery-box-btn {
+    right: 1rem !important;
+    left: auto !important;
+  }
+  
+  .toast-container {
+    left: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+/* ─── Animation Enhancements ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tool-card {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.category-card {
+  animation: slideInRight 0.5s ease-out backwards;
+}
+
+/* Stagger animations */
+.tools-grid .tool-card:nth-child(1) { animation-delay: 0s; }
+.tools-grid .tool-card:nth-child(2) { animation-delay: 0.1s; }
+.tools-grid .tool-card:nth-child(3) { animation-delay: 0.2s; }
+.tools-grid .tool-card:nth-child(4) { animation-delay: 0.3s; }
+.tools-grid .tool-card:nth-child(5) { animation-delay: 0.4s; }
+.tools-grid .tool-card:nth-child(6) { animation-delay: 0.5s; }
