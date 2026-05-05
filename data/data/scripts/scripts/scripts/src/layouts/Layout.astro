@@ -1,0 +1,240 @@
+---
+// ═══════════════════════════════════════════════════════
+// ZAKIHUB MASTER LAYOUT v3.0
+// Glassmorphism + Cyberpunk Light + Organic Animations
+// ═══════════════════════════════════════════════════════
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const { 
+  title = "ZakiHub 🧠 | دليل أدوات الذكاء الاصطناعي",
+  description = "اكتشف أفضل أدوات AI. تصنيفات ذكية، مقارنات تفاعلية، وتحديات يومية.",
+  image = "/og-image.jpg",
+  type = "website"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zakihub.eu.org');
+---
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a1a" />
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Primary Meta -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="أدوات AI, ذكاء اصطناعي, ChatGPT, Midjourney, دليل AI" />
+  <meta name="author" content="ZakiHub Team" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, canonicalURL)} />
+  <meta property="og:locale" content="ar_SA" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(image, canonicalURL)} />
+  
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ZakiHub",
+    url: canonicalURL.toString(),
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${canonicalURL}search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  })} />
+  
+  <!-- Zaki Engine -->
+  <script src="/js/zaki-engine.js" defer></script>
+  <script src="/js/dopamine.js" defer></script>
+</head>
+
+<body class="zaki-body">
+  
+  <!-- Background Canvas for Particles -->
+  <canvas id="bg-canvas" class="bg-canvas"></canvas>
+  
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+  
+  <!-- Navigation -->
+  <nav class="zaki-nav glass" id="main-nav">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">Zaki<span class="highlight">Hub</span></span>
+        <span class="version">v3.0</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="/" class="nav-link active" data-tooltip="الرئيسية">
+          <span class="link-icon">🏠</span>
+          <span class="link-text">الرئيسية</span>
+        </a>
+        <a href="/tools/" class="nav-link" data-tooltip="الأدوات">
+          <span class="link-icon">🛠️</span>
+          <span class="link-text">الأدوات</span>
+        </a>
+        <a href="/game/" class="nav-link" data-tooltip="اللعبة">
+          <span class="link-icon">🎮</span>
+          <span class="link-text">اللعبة</span>
+          <span class="badge-new">جديد</span>
+        </a>
+        <a href="/about/" class="nav-link" data-tooltip="من نحن">
+          <span class="link-icon">👥</span>
+          <span class="link-text">من نحن</span>
+        </a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn-focus" id="focus-mode-btn" title="وضع التركيز">
+          <span>🎯</span>
+        </button>
+        <button class="btn-zaki" id="zaki-toggle" title="تحدث مع ذاكي">
+          <span class="zaki-avatar">🤖</span>
+          <span class="zaki-status online"></span>
+        </button>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Zaki AI Companion Panel -->
+  <aside class="zaki-panel" id="zaki-panel">
+    <div class="zaki-header glass">
+      <div class="zaki-info">
+        <span class="zaki-avatar-large" id="zaki-avatar">🤖</span>
+        <div>
+          <h3>ذاكي</h3>
+          <p class="zaki-mood" id="zaki-mood">مستعد أساعدك! ✨</p>
+        </div>
+      </div>
+      <button class="btn-close" id="zaki-close">×</button>
+    </div>
+    <div class="zaki-chat" id="zaki-chat">
+      <div class="chat-welcome">
+        <p>أهلاً! أنا ذاكي 🧠</p>
+        <p>سأرشدك لأفضل أدوات AI!</p>
+      </div>
+    </div>
+    <div class="zaki-input-area glass">
+      <input type="text" id="zaki-input" placeholder="اسألني عن أي أداة..." />
+      <button id="zaki-send">➤</button>
+    </div>
+  </aside>
+  
+  <!-- Dopamine HUD (Heads Up Display) -->
+  <div class="dopamine-hud" id="dopamine-hud">
+    <div class="hud-item" id="hud-streak">
+      <span class="hud-icon">🔥</span>
+      <span class="hud-value" id="streak-value">0</span>
+      <span class="hud-label">يوم</span>
+    </div>
+    <div class="hud-item" id="hud-points">
+      <span class="hud-icon">💎</span>
+      <span class="hud-value" id="points-value">0</span>
+      <span class="hud-label">نقطة</span>
+    </div>
+    <div class="hud-item" id="hud-level">
+      <span class="hud-icon">⭐</span>
+      <span class="hud-value" id="level-value">1</span>
+      <span class="hud-label">مستوى</span>
+    </div>
+  </div>
+  
+  <!-- Mystery Box Button -->
+  <button class="mystery-box-btn" id="mystery-box" title="الصندوق الغامض!">
+    <span class="box-icon">🎁</span>
+    <span class="box-timer" id="box-timer">جاهز!</span>
+    <div class="box-glow"></div>
+  </button>
+  
+  <!-- Main Content -->
+  <main class="zaki-main" id="main-content">
+    <slot />
+  </main>
+  
+  <!-- Footer -->
+  <footer class="zaki-footer glass">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">🧠</span>
+        <span>ZakiHub</span>
+        <p>دليل أدوات الذكاء الاصطناعي الأكثر إبداعاً</p>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy/">سياسة الخصوصية</a>
+        <a href="/about/">من نحن</a>
+        <a href="/contact/">اتصل بنا</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="GitHub">⌘</a>
+        <a href="#" aria-label="Discord">💬</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ZakiHub. مبني بالـ ❤️ وكمية هائلة من الـ dopamine 🧠</p>
+      <p class="auto-status">🤖 يتم التحديث تلقائياً كل 3 ساعات</p>
+    </div>
+  </footer>
+  
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+  
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loader">
+      <div class="loader-ring"></div>
+      <div class="loader-text">جاري التحميل...</div>
+    </div>
+  </div>
+  
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+  
+</body>
+</html>
