@@ -1,13 +1,13 @@
 /**
  * ═══════════════════════════════════════════════════════
- * ZAKI AI COMPANION ENGINE v3.0
+ * ZAKI AI COMPANION ENGINE v3.0 - ENGLISH EDITION
  * ═══════════════════════════════════════════════════════
  * 
- * - شخصية ديناميكية تتغير حسب الوقت والمزاج
- * - ذاكرة محلية (localStorage) تتذكر المستخدم
- * - مضاد تكرار (لا يكرر نفس الرد مرتين متتاليتين)
- * - نظام نصائح ذكي
- * - تحليل مشاعر المستخدم من رسائله
+ * - Dynamic personality that changes based on time and mood
+ * - Local memory (localStorage) that remembers the user
+ * - Anti-repetition (never repeats the same response twice)
+ * - Smart tips system
+ * - User sentiment analysis from messages
  */
 
 class ZakiEngine {
@@ -21,7 +21,6 @@ class ZakiEngine {
   }
 
   async init() {
-    // جلب معرفة ذاكي
     try {
       const res = await fetch('/data/zaki-knowledge.json');
       this.knowledge = await res.json();
@@ -33,7 +32,6 @@ class ZakiEngine {
     this.setupUI();
     this.greetUser();
     
-    // تحديث المزاج كل 5 دقائق
     setInterval(() => this.updateMood(), 300000);
   }
 
@@ -67,17 +65,17 @@ class ZakiEngine {
     return {
       personality: {
         moods: {
-          happy: ['أهلاً! 🎉', 'يوم سعيد! ✨'],
-          supportive: ['أنا هنا! 💪', 'معاك خطوة بخطوة 🤗']
+          happy: ['Hello! 🎉', 'Great day! ✨'],
+          supportive: ['I\'m here! 💪', 'With you step by step 🤗']
         }
       },
       greetings: {
-        morning: ['صباح الخير! ☀️'],
-        afternoon: ['مساء النور! 🌤️'],
-        evening: ['مساء الخير! 🌙'],
-        night: ['تصبح على خير! 🌌']
+        morning: ['Good morning! ☀️'],
+        afternoon: ['Good afternoon! 🌤️'],
+        evening: ['Good evening! 🌙'],
+        night: ['Good night! 🌌']
       },
-      tips: ['💡 جرب أدوات جديدة كل يوم!']
+      tips: ['💡 Try discovering new tools every day!']
     };
   }
 
@@ -100,7 +98,7 @@ class ZakiEngine {
     if (avatarEl) {
       avatarEl.textContent = this.memory.avatar;
       avatarEl.style.animation = 'none';
-      avatarEl.offsetHeight; // trigger reflow
+      avatarEl.offsetHeight;
       avatarEl.style.animation = 'zakiFloat 3s ease-in-out infinite';
     }
     
@@ -126,25 +124,22 @@ class ZakiEngine {
     if (!this.knowledge) return;
     
     const timeOfDay = this.getTimeOfDay();
-    const greetings = this.knowledge.greetings[timeOfDay] || ['أهلاً!'];
+    const greetings = this.knowledge.greetings[timeOfDay] || ['Hello!'];
     const greeting = this.getRandom(greetings);
     
-    // لو أول زيارة
     if (this.memory.visits === 1) {
-      this.say(`أهلاً بيك في ZakiHub! 🧠\nأنا ذاكي، رفيقك في عالم AI.\nاسألني عن أي أداة وأنا أرشدك!`);
+      this.say(`Welcome to ZakiHub! 🧠\nI'm Zaki, your companion in the AI world.\nAsk me about any tool and I'll guide you!`);
       return;
     }
     
-    // لو رجوع بعد غياب
     const daysSince = Math.floor((Date.now() - this.memory.lastVisit) / 86400000);
     if (daysSince > 7) {
-      this.say(`اشتقتلك! 😊 غبت ${daysSince} يوم. جرب أدوات جديدة كتير ظهرت!`);
+      this.say(`Missed you! 😊 You were gone for ${daysSince} days. Tons of new tools appeared!`);
       return;
     }
     
-    this.say(`${greeting} زيارة رقم ${this.memory.visits}! 🎉`);
+    this.say(`${greeting} Visit #${this.memory.visits}! 🎉`);
     
-    // نصيحة عشوائية كل 3 زيارات
     if (this.memory.visits % 3 === 0) {
       setTimeout(() => this.giveTip(), 1500);
     }
@@ -158,7 +153,6 @@ class ZakiEngine {
 
   getRandom(arr) {
     if (!arr || arr.length === 0) return '';
-    // مضاد تكرار: تجنب آخر 5 ردود
     let attempts = 0;
     let selected;
     do {
@@ -174,12 +168,13 @@ class ZakiEngine {
   }
 
   analyzeSentiment(text) {
-    const positive = ['شكرا', 'ممتاز', 'رائع', 'حلو', 'عظيم', 'أحب', '❤️', '😍', '🔥'];
-    const negative = ['سيء', 'مشكلة', 'خطأ', 'فاشل', '😠', '😢', '💔'];
+    const positive = ['thanks', 'great', 'awesome', 'good', 'love', 'like', 'amazing', '❤️', '😍', '🔥', 'cool', 'nice', 'perfect'];
+    const negative = ['bad', 'problem', 'error', 'fail', 'hate', 'suck', 'terrible', '😠', '😢', '💔', 'worst', 'broken'];
     
     let score = 0;
-    positive.forEach(w => { if (text.includes(w)) score++; });
-    negative.forEach(w => { if (text.includes(w)) score--; });
+    const lower = text.toLowerCase();
+    positive.forEach(w => { if (lower.includes(w)) score++; });
+    negative.forEach(w => { if (lower.includes(w)) score--; });
     
     return score;
   }
@@ -191,68 +186,65 @@ class ZakiEngine {
     const sentiment = this.analyzeSentiment(text);
     const lower = text.toLowerCase();
     
-    // ردود على كلمات مفتاحية
-    if (lower.includes('مرحبا') || lower.includes('أهلا')) {
+    if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
       return this.getRandom(this.knowledge.greetings[this.getTimeOfDay()]);
     }
     
-    if (lower.includes('شكرا') || lower.includes('thanks')) {
-      const responses = ['العفو! 🌟', 'في خدمتك دائماً! 💚', 'ده واجب! 😊'];
+    if (lower.includes('thank') || lower.includes('thanks')) {
+      const responses = ['You\'re welcome! 🌟', 'Always at your service! 💚', 'My pleasure! 😊'];
       return this.getRandom(responses);
     }
     
-    if (lower.includes('مجاني') || lower.includes('free')) {
-      return 'أفضل الأدوات المجانية: Stable Diffusion, Hugging Face, و Descript (نسخته المجانية). جربهم! 🆓';
+    if (lower.includes('free')) {
+      return 'Best free tools: Stable Diffusion, Hugging Face, and Descript (free tier). Try them! 🆓';
     }
     
-    if (lower.includes('برمجة') || lower.includes('code')) {
-      return 'للبرمجة: GitHub Copilot و Cursor هما الأفضل. Cursor مجاني جزئياً وبيفهم مشروعك كامل! 💻';
+    if (lower.includes('code') || lower.includes('coding') || lower.includes('program')) {
+      return 'For coding: GitHub Copilot and Cursor are the best. Cursor is partially free and understands your entire project! 💻';
     }
     
-    if (lower.includes('صور') || lower.includes('image')) {
-      return 'للصور: Midjourney للجودة السينمائية، و Leonardo AI للألعاب. Stable Diffusion مجاني تماماً! 🎨';
+    if (lower.includes('image') || lower.includes('picture') || lower.includes('photo')) {
+      return 'For images: Midjourney for cinematic quality, and Leonardo AI for games. Stable Diffusion is completely free! 🎨';
     }
     
-    if (lower.includes('فيديو') || lower.includes('video')) {
-      return 'لفيديو: Runway ML للتأثيرات السينمائية، و HeyGen للأفاتار المتحدث. جربهم! 🎬';
+    if (lower.includes('video') || lower.includes('movie')) {
+      return 'For video: Runway ML for cinematic effects, and HeyGen for talking avatars. Try them! 🎬';
     }
     
-    if (lower.includes('صوت') || lower.includes('voice')) {
-      return 'للصوت: ElevenLabs أطبيعي صوت بشري 100%. Suno AI يولد موسيقى كاملة! 🎵';
+    if (lower.includes('voice') || lower.includes('audio') || lower.includes('sound') || lower.includes('music')) {
+      return 'For audio: ElevenLabs is 100% natural human voice. Suno AI generates full music! 🎵';
     }
     
-    if (lower.includes('نصائح') || lower.includes('نصيحة')) {
+    if (lower.includes('tip') || lower.includes('advice')) {
       this.giveTip();
       return null;
     }
     
-    if (lower.includes('مستواي') || lower.includes('نقاطي')) {
+    if (lower.includes('points') || lower.includes('level') || lower.includes('score')) {
       const points = localStorage.getItem('zaki-points') || 0;
       const level = Math.floor(points / 500) + 1;
-      return `عندك ${points} نقطة! 🏆 مستواك: ${level}. كمل عشان تفتح مكافآت جديدة!`;
+      return `You have ${points} points! 🏆 Level: ${level}. Keep going to unlock new rewards!`;
     }
     
-    if (lower.includes('تحدي') || lower.includes('challenge')) {
-      return 'تحدي اليوم: اكتشف 3 أدوات في فئة جديدة! هتكسب 100 نقطة إضافية! 🎯';
+    if (lower.includes('challenge')) {
+      return 'Today\'s challenge: Discover 3 tools in a new category! Earn 100 bonus points! 🎯';
     }
     
-    // ردود عامة حسب المشاعر
     if (sentiment > 0) {
-      const happy = ['مبسوط إنك مبسوط! 🎉', 'ده اللي بنحبه! 🔥', 'كمل! أنت أسطورة! 💪'];
+      const happy = ['Glad you\'re happy! 🎉', 'That\'s what we love! 🔥', 'Keep going! You\'re a legend! 💪'];
       return this.getRandom(happy);
     }
     
     if (sentiment < 0) {
-      const supportive = ['متقلقش، أنا معاك! 💚', 'كل شيء بيتحسن! 🌟', 'خد نفس عميق وجرب تاني! 🤗'];
+      const supportive = ['Don\'t worry, I\'m with you! 💚', 'Everything gets better! 🌟', 'Take a deep breath and try again! 🤗'];
       return this.getRandom(supportive);
     }
     
-    // رد افتراضي
     const defaults = [
-      'ممكن توضح أكتر؟ 🤔',
-      'شيقة! قولي تبي أداة في مجال معين؟ 🎯',
-      'جرب تكتب "مجاني" أو "برمجة" أو "صور" 🛠️',
-      'أنا هنا أساعدك! اسأل عن أي أداة 💡'
+      'Can you clarify? 🤔',
+      'Interesting! Tell me, want a tool in a specific field? 🎯',
+      'Try typing "free" or "coding" or "images" 🛠️',
+      'I\'m here to help! Ask about any tool 💡'
     ];
     return this.getRandom(defaults);
   }
@@ -267,7 +259,6 @@ class ZakiEngine {
     chat.appendChild(msg);
     chat.scrollTop = chat.scrollHeight;
     
-    // تأثير صوتي بصري
     this.spawnParticles(msg);
   }
 
@@ -288,7 +279,6 @@ class ZakiEngine {
   }
 
   setupUI() {
-    // فتح/قفل البانل
     const toggle = document.getElementById('zaki-toggle');
     const panel = document.getElementById('zaki-panel');
     const close = document.getElementById('zaki-close');
@@ -306,7 +296,6 @@ class ZakiEngine {
       close.addEventListener('click', () => panel.classList.remove('open'));
     }
     
-    // إرسال رسالة
     const input = document.getElementById('zaki-input');
     const send = document.getElementById('zaki-send');
     
@@ -317,7 +306,6 @@ class ZakiEngine {
       this.say(text, 'user');
       input.value = '';
       
-      // كتابة...
       setTimeout(() => {
         const response = this.processMessage(text);
         if (response) this.say(response);
@@ -329,7 +317,6 @@ class ZakiEngine {
       if (e.key === 'Enter') sendMessage();
     });
     
-    // تغيير الأفاتار
     const avatarEl = document.getElementById('zaki-avatar');
     if (avatarEl && this.knowledge) {
       const avatars = this.knowledge.personality.avatarVariants || ['🤖'];
@@ -337,17 +324,16 @@ class ZakiEngine {
       if (idx === -1) idx = 0;
       
       avatarEl.style.cursor = 'pointer';
-      avatarEl.title = 'اضغط لتغيير شكل ذاكي';
+      avatarEl.title = 'Click to change Zaki\'s look';
       avatarEl.addEventListener('click', () => {
         idx = (idx + 1) % avatars.length;
         this.memory.avatar = avatars[idx];
         this.saveMemory();
         this.updateAvatar();
-        this.say('شكل جديد! أعجبك؟ ✨');
+        this.say('New look! Like it? ✨');
       });
     }
   }
 }
 
-// Initialize
 window.zaki = new ZakiEngine();
