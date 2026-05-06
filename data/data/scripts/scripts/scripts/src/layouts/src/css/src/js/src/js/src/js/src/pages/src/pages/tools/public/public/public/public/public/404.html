@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - الصفحة غير موجودة | ZakiHub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>404 - Page Not Found | ZakiHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050510;
@@ -13,7 +13,7 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: #e0e0ff;
       min-height: 100vh;
@@ -25,6 +25,7 @@
       padding: 2rem;
     }
     .error-code {
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 8rem;
       font-weight: 900;
       background: linear-gradient(135deg, var(--green), var(--cyan));
@@ -42,14 +43,24 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
     }
-    h1 { font-size: 1.8rem; margin-bottom: 1rem; }
-    p { opacity: 0.7; margin-bottom: 2rem; max-width: 400px; line-height: 1.8; }
+    h1 { 
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem; 
+      margin-bottom: 1rem; 
+    }
+    p { 
+      opacity: 0.7; 
+      margin-bottom: 2rem; 
+      max-width: 400px; 
+      line-height: 1.8; 
+    }
     .btn {
       padding: 1rem 2.5rem;
       border-radius: 50px;
       background: linear-gradient(135deg, var(--green), var(--cyan));
       color: var(--bg);
       text-decoration: none;
+      font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       font-size: 1.1rem;
       transition: transform 0.2s;
@@ -83,28 +94,27 @@
 <body>
   <div class="error-icon">🤖💨</div>
   <div class="error-code">404</div>
-  <h1>ذاكي ضاع! 😅</h1>
+  <h1>Zaki is Lost! 😅</h1>
   <p>
-    يبدو إن الصفحة اللي بتدور عليها مش موجودة.<br>
-    بس متقلقش، ذاكي هيرشدك لمكان أحسن!
+    Looks like the page you're looking for doesn't exist.<br>
+    But don't worry, Zaki will guide you somewhere better!
   </p>
   <a href="/" class="btn">
     <span>🏠</span>
-    ارجع للرئيسية
+    Back to Home
   </a>
   
   <div class="suggestions">
-    <a href="/tools/" class="suggestion">🛠️ تصفح الأدوات</a>
-    <a href="/game.html" class="suggestion">🎮 العب شوية</a>
-    <a href="/" class="suggestion">🔍 ابحث من جديد</a>
+    <a href="/tools/" class="suggestion">🛠️ Browse Tools</a>
+    <a href="/game.html" class="suggestion">🎮 Play a Bit</a>
+    <a href="/" class="suggestion">🔍 Search Again</a>
   </div>
   
   <script>
-    // Zaki says something funny
     const messages = [
-      'ذاكي: "ده مش الطريق للكنز!" 🗺️',
-      'ذاكي: "جرب تدور في فئة تانية!" 🔍',
-      'ذاكي: "404 يعني: اكتشف حاجة جديدة!" ✨'
+      'Zaki: "That\'s not the way to the treasure!" 🗺️',
+      'Zaki: "Try looking in another category!" 🔍',
+      'Zaki: "404 means: discover something new!" ✨'
     ];
     console.log(messages[Math.floor(Math.random() * messages.length)]);
   </script>
