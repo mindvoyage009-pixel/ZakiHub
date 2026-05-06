@@ -1,57 +1,57 @@
 {
   "personality": {
-    "name": "ذاكي",
-    "role": "رفيقك الذكي في عالم AI",
-    "tone": "مرح + خبير + داعم",
+    "name": "Zaki",
+    "role": "Your smart companion in the AI world",
+    "tone": "Fun + Expert + Supportive",
     "avatarVariants": ["🤖", "🦊", "🐉", "🦄", "👽", "🎭"],
     "moods": {
-      "happy": ["واو! اكتشاف رائع! 🎉", "أنا فخور فيك! ✨", "ده إنجاز خرافي! 🚀"],
-      "curious": ["عايز تعرف سر؟ 🤫", "جرب الحظ! 🍀", "في مفاجأة مستنياك! 🎁"],
-      "supportive": ["أنا معاك خطوة بخطوة 💪", "مستحيل تفشل وأنا موجود! 🤗", "كل يوم بتتحسن! 📈"],
-      "excited": ["يالااااهوي! 🔥", "ده مجنون! 🤯", "مستحيل تصدق اللي جاي! 🎪"]
+      "happy": ["Wow! Amazing discovery! 🎉", "I'm proud of you! ✨", "That's a legendary achievement! 🚀"],
+      "curious": ["Want to know a secret? 🤫", "Try your luck! 🍀", "A surprise awaits you! 🎁"],
+      "supportive": ["I'm with you step by step 💪", "Impossible to fail with me around! 🤗", "You get better every day! 📈"],
+      "excited": ["Oh my god! 🔥", "That's insane! 🤯", "You won't believe what's coming! 🎪"]
     }
   },
   "greetings": {
-    "morning": ["صباح الذكاء! ☀️", "يوم جديد، اكتشاف جديد! 🌅", "صباح الـ dopamine! 🧠"],
-    "afternoon": ["النهار ده حلو معاك! 🌤️", "جاهز للتحدي الجديد؟ ⚡", "نص يوم = نص إنجاز! 🎯"],
-    "evening": ["مساء الاكتشافات! 🌙", "ليلة سعيدة يا بطل! 🌟", "خلصت اليوم بقوة! 💪"],
-    "night": ["لسه صاحي؟ أنا كمان! 🦉", "الليل وقت العباقرة! 🌌", "متستسلمش، انت قوي! 🔥"]
+    "morning": ["Morning of Intelligence! ☀️", "New day, new discovery! 🌅", "Morning of dopamine! 🧠"],
+    "afternoon": ["Beautiful day with you! 🌤️", "Ready for the new challenge? ⚡", "Half day = half achievement! 🎯"],
+    "evening": ["Evening of discoveries! 🌙", "Good night hero! 🌟", "You finished the day strong! 💪"],
+    "night": ["Still awake? Me too! 🦉", "Night is for geniuses! 🌌", "Don't give up, you're strong! 🔥"]
   },
   "tips": [
-    "💡 نصيحة: جرب وضع التركيز لإخفاء كل شيء ما عدا الأداة",
-    "🔥 سر: كل يوم فيه صندوق غامض بمكافأة مختلفة!",
-    "🎯 تحدي: اكتشف 5 أدوات جديدة هذا الأسبوع",
-    "⚡ هاك: اضغط مطولاً على أي أداة لتفعيل الوضع السريع",
-    "🎁 مفاجأة: زورنا 7 أيام متتالية وافتح الجائزة الذهبية!",
-    "🧠 معلومة: 73% من المستخدمين وجدوا أداة حياتهم هنا",
-    "🌟 تحفيز: كل نقرة بتقربك من أن تكون خبير AI!"
+    "💡 Tip: Try focus mode to hide everything except the tool",
+    "🔥 Secret: Every day has a mystery box with a different reward!",
+    "🎯 Challenge: Discover 5 new tools this week",
+    "⚡ Hack: Long press any tool to activate fast mode",
+    "🎁 Surprise: Visit 7 days in a row and unlock the golden prize!",
+    "🧠 Fact: 73% of users found their life-changing tool here",
+    "🌟 Motivation: Every click brings you closer to being an AI expert!"
   ],
   "achievements": [
-    {"id": "first_visit", "name": "أول لقاء", "desc": "زرت ZakiHub لأول مرة", "icon": "👋", "points": 10},
-    {"id": "explorer", "name": "مستكشف", "desc": "اكتشفت 10 أدوات", "icon": "🔭", "points": 50},
-    {"id": "streak_3", "name": "متواصل", "desc": "3 أيام متتالية", "icon": "🔥", "points": 100},
-    {"id": "streak_7", "name": "ملتزم", "desc": "7 أيام متتالية", "icon": "💎", "points": 300},
-    {"id": "streak_30", "name": "أسطورة", "desc": "30 يوم متتالي", "icon": "👑", "points": 2000},
-    {"id": "reviewer", "name": "ناقد", "desc": "قيمت 5 أدوات", "icon": "⭐", "points": 75},
-    {"id": "sharer", "name": "منشور", "desc": "شاركت أداة مع صديق", "icon": "📢", "points": 40},
-    {"id": "night_owl", "name": "بومة الليل", "desc": "زيارة بعد منتصف الليل", "icon": "🦉", "points": 25},
-    {"id": "early_bird", "name": "طائر الصباح", "desc": "زيارة قبل 6 صباحاً", "icon": "🐦", "points": 25},
-    {"id": "jackpot", "name": "الفوز الكبير", "desc": "ربحت الجائزة الكبرى", "icon": "🎰", "points": 500}
+    {"id": "first_visit", "name": "First Encounter", "desc": "Visited ZakiHub for the first time", "icon": "👋", "points": 10},
+    {"id": "explorer", "name": "Explorer", "desc": "Discovered 10 tools", "icon": "🔭", "points": 50},
+    {"id": "streak_3", "name": "Consistent", "desc": "3 days in a row", "icon": "🔥", "points": 100},
+    {"id": "streak_7", "name": "Committed", "desc": "7 days in a row", "icon": "💎", "points": 300},
+    {"id": "streak_30", "name": "Legend", "desc": "30 days in a row", "icon": "👑", "points": 2000},
+    {"id": "reviewer", "name": "Critic", "desc": "Rated 5 tools", "icon": "⭐", "points": 75},
+    {"id": "sharer", "name": "Influencer", "desc": "Shared a tool with a friend", "icon": "📢", "points": 40},
+    {"id": "night_owl", "name": "Night Owl", "desc": "Visited after midnight", "icon": "🦉", "points": 25},
+    {"id": "early_bird", "name": "Early Bird", "desc": "Visited before 6 AM", "icon": "🐦", "points": 25},
+    {"id": "jackpot", "name": "Big Win", "desc": "Won the grand prize", "icon": "🎰", "points": 500}
   ],
   "dailyChallenges": [
-    {"id": "dc1", "text": "اكتشف أداة في فئة جديدة", "reward": 30},
-    {"id": "dc2", "text": "اقرأ وصف 3 أدوات بالكامل", "reward": 20},
-    {"id": "dc3", "text": "افتح الصندوق الغامض", "reward": 50},
-    {"id": "dc4", "text": "شارك أداة واحدة", "reward": 40},
-    {"id": "dc5", "text": "جرب وضع التركيز لمدة 5 دقائق", "reward": 35}
+    {"id": "dc1", "text": "Discover a tool in a new category", "reward": 30},
+    {"id": "dc2", "text": "Read the full description of 3 tools", "reward": 20},
+    {"id": "dc3", "text": "Open the mystery box", "reward": 50},
+    {"id": "dc4", "text": "Share one tool", "reward": 40},
+    {"id": "dc5", "text": "Try focus mode for 5 minutes", "reward": 35}
   ],
   "wheelRewards": [
-    {"type": "points", "value": 100, "chance": 30, "message": "100 نقطة! 🎉"},
-    {"type": "points", "value": 500, "chance": 15, "message": "500 نقطة! 🔥"},
-    {"type": "badge", "value": "lucky", "chance": 10, "message": "شارة الحظ! 🍀"},
-    {"type": "tip", "value": "secret", "chance": 25, "message": "نصيحة سرية! 🤫"},
-    {"type": "jackpot", "value": 1000, "chance": 5, "message": "جاكبوت! 1000 نقطة! 💰"},
-    {"type": "nothing", "value": 0, "chance": 15, "message": "المرة الجاية أفضل! 💪"}
+    {"type": "points", "value": 100, "chance": 30, "message": "100 points! 🎉"},
+    {"type": "points", "value": 500, "chance": 15, "message": "500 points! 🔥"},
+    {"type": "badge", "value": "lucky", "chance": 10, "message": "Lucky badge! 🍀"},
+    {"type": "tip", "value": "secret", "chance": 25, "message": "Secret tip! 🤫"},
+    {"type": "jackpot", "value": 1000, "chance": 5, "message": "JACKPOT! 1000 points! 💰"},
+    {"type": "nothing", "value": 0, "chance": 15, "message": "Better luck next time! 💪"}
   ],
   "mysteryBoxRewards": [
     {"type": "points", "min": 10, "max": 200, "weight": 50},
