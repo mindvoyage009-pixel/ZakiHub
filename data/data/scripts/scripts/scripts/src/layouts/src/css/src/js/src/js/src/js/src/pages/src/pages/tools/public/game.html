@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zaki's Tool Run 3.0 🎮 | لعبة استكشاف أدوات AI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>Zaki's Tool Run 3.0 🎮 | AI Tools Exploration Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050510;
@@ -15,14 +15,13 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Tajawal', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: #e0e0ff;
       overflow: hidden;
       height: 100vh;
     }
     
-    /* Game Canvas */
     #game-canvas {
       position: fixed;
       top: 0; left: 0;
@@ -30,7 +29,6 @@
       z-index: 1;
     }
     
-    /* HUD */
     .game-hud {
       position: fixed;
       top: 20px;
@@ -60,7 +58,6 @@
     .hud-level { color: var(--green); }
     .hud-tools { color: var(--cyan); }
     
-    /* Character */
     .player {
       position: fixed;
       bottom: 100px;
@@ -82,7 +79,6 @@
       50% { transform: translateX(-50%) translateY(-100px); }
     }
     
-    /* Zones (Categories as platforms) */
     .zone {
       position: absolute;
       height: 20px;
@@ -101,7 +97,6 @@
       transform: scale(1.05);
     }
     
-    /* Collectibles */
     .collectible {
       position: absolute;
       font-size: 1.5rem;
@@ -115,7 +110,6 @@
       50% { transform: translateY(-10px); }
     }
     
-    /* Gift Box (Async Cooperation) */
     .gift-box {
       position: absolute;
       font-size: 2rem;
@@ -129,7 +123,6 @@
       50% { filter: drop-shadow(0 0 20px var(--gold)); }
     }
     
-    /* Start Screen */
     .start-screen {
       position: fixed;
       inset: 0;
@@ -143,6 +136,7 @@
     }
     
     .start-screen h1 {
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 3rem;
       background: linear-gradient(135deg, var(--green), var(--cyan));
       -webkit-background-clip: text;
@@ -152,7 +146,7 @@
     .start-btn {
       padding: 1rem 3rem;
       font-size: 1.3rem;
-      font-family: inherit;
+      font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       border: none;
       border-radius: 50px;
@@ -173,7 +167,6 @@
       line-height: 1.8;
     }
     
-    /* Character Editor */
     .char-editor {
       position: fixed;
       bottom: 20px;
@@ -203,7 +196,6 @@
       transform: scale(1.1);
     }
     
-    /* Back Button */
     .back-btn {
       position: fixed;
       top: 20px;
@@ -226,17 +218,17 @@
   </style>
 </head>
 <body>
-  <a href="/" class="back-btn">← الرئيسية</a>
+  <a href="/" class="back-btn">← Home</a>
   
   <div class="start-screen" id="start-screen">
     <h1>🎮 Zaki's Tool Run 3.0</h1>
     <p class="game-instructions">
-      استكشف عالم AI في مغامرة جانبية!<br>
-      اقفز بين المنصات (التصنيفات)، اجمع الأدوات،<br>
-      افتح الهدايا، واكسر أرقامك!<br><br>
-      <strong>التحكم:</strong> الأسهم ← → للحركة | مسافة للقفز
+      Explore the world of AI in a side adventure!<br>
+      Jump between platforms (categories), collect tools,<br>
+      open gifts, and beat your records!<br><br>
+      <strong>Controls:</strong> Arrow keys ← → to move | Space to jump
     </p>
-    <button class="start-btn" onclick="startGame()">ابدأ اللعب! 🚀</button>
+    <button class="start-btn" onclick="startGame()">Start Playing! 🚀</button>
   </div>
   
   <canvas id="game-canvas"></canvas>
@@ -313,15 +305,12 @@
       charEditor.style.display = 'flex';
       gameRunning = true;
       
-      // Load saved character
       const memory = JSON.parse(localStorage.getItem('zaki-memory') || '{}');
       if (memory.avatar) setChar(memory.avatar);
       
-      // Generate collectibles
       generateCollectibles();
       generateGifts();
       
-      // Sync with main dopamine engine
       const d = JSON.parse(localStorage.getItem('zaki-dopamine') || '{}');
       score = d.points || 0;
       level = d.level || 1;
@@ -343,7 +332,6 @@
     }
     
     function generateGifts() {
-      // Gifts left by other players (async cooperation)
       for (let i = 0; i < 5; i++) {
         gifts.push({
           x: Math.random() * (window.innerWidth - 100) + 50,
@@ -362,7 +350,6 @@
         btn.classList.toggle('active', btn.textContent === char);
       });
       
-      // Save
       const memory = JSON.parse(localStorage.getItem('zaki-memory') || '{}');
       memory.avatar = char;
       localStorage.setItem('zaki-memory', JSON.stringify(memory));
@@ -374,7 +361,6 @@
       document.getElementById('tools-count').textContent = toolsCollected.length;
     }
     
-    // Input
     document.addEventListener('keydown', (e) => {
       keys[e.key] = true;
       if (e.code === 'Space' && !isJumping && gameRunning) {
@@ -389,7 +375,6 @@
       keys[e.key] = false;
     });
     
-    // Touch controls
     let touchStartX = 0;
     document.addEventListener('touchstart', (e) => {
       touchStartX = e.touches[0].clientX;
@@ -413,7 +398,6 @@
       
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Draw zones (platforms)
       categories.forEach((cat, i) => {
         const x = (i * (canvas.width / categories.length)) + 50;
         const width = canvas.width / categories.length - 100;
@@ -421,11 +405,10 @@
         ctx.fillStyle = cat.color + '30';
         ctx.fillRect(x, cat.y, width, 20);
         ctx.fillStyle = cat.color;
-        ctx.font = 'bold 12px Tajawal';
+        ctx.font = 'bold 12px Inter';
         ctx.textAlign = 'center';
         ctx.fillText(cat.icon + ' ' + cat.name, x + width/2, cat.y - 10);
         
-        // Check collision with player
         const playerRect = player.getBoundingClientRect();
         if (playerRect.left > x && playerRect.right < x + width &&
             Math.abs(playerRect.bottom - cat.y) < 20 && velocityY >= 0) {
@@ -435,7 +418,6 @@
         }
       });
       
-      // Physics
       if (keys['ArrowLeft']) playerX -= 5;
       if (keys['ArrowRight']) playerX += 5;
       
@@ -443,7 +425,7 @@
       player.style.left = playerX + 'px';
       
       if (isJumping) {
-        velocityY += 0.8; // gravity
+        velocityY += 0.8;
         const currentBottom = parseInt(player.style.bottom || '100');
         player.style.bottom = (currentBottom - velocityY) + 'px';
         
@@ -454,14 +436,12 @@
         }
       }
       
-      // Draw collectibles
       collectibles.forEach((item, i) => {
         if (item.collected) return;
         
         ctx.font = '20px serif';
         ctx.fillText(item.icon, item.x, item.y);
         
-        // Check collision
         const pRect = player.getBoundingClientRect();
         const distance = Math.sqrt(
           Math.pow(pRect.left + 25 - item.x, 2) + 
@@ -473,18 +453,15 @@
           score += item.value;
           updateHud();
           
-          // Save to main engine
           const d = JSON.parse(localStorage.getItem('zaki-dopamine') || '{}');
           d.points = score;
           localStorage.setItem('zaki-dopamine', JSON.stringify(d));
           localStorage.setItem('zaki-points', score);
           
-          // Toast
-          showGameToast(`+${item.value} نقطة!`);
+          showGameToast(`+${item.value} points!`);
         }
       });
       
-      // Draw gifts
       gifts.forEach((gift, i) => {
         if (gift.collected) return;
         
@@ -501,9 +478,8 @@
           gift.collected = true;
           score += gift.value;
           updateHud();
-          showGameToast(`🎁 هدية من ${gift.from}! +${gift.value}`);
+          showGameToast(`🎁 Gift from ${gift.from}! +${gift.value}`);
           
-          // Save
           const d = JSON.parse(localStorage.getItem('zaki-dopamine') || '{}');
           d.points = score;
           localStorage.setItem('zaki-dopamine', JSON.stringify(d));
