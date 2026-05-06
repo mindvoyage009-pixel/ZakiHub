@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// جلب البيانات
+// Fetch data
 let tools = [];
 let categories = [];
 let trending = [];
@@ -37,50 +37,50 @@ const totalTools = tools.length;
 ---
 
 <Layout 
-  title="ZakiHub 🧠 | دليل أدوات الذكاء الاصطناعي الأكثر إبداعاً"
-  description="اكتشف أفضل 50+ أداة AI مجانية ومدفوعة. تصنيفات ذكية، مقارنات تفاعلية، وتحديات يومية. انضم لمليون مستخدم!"
+  title="ZakiHub 🧠 | The Most Creative AI Tools Directory"
+  description="Discover 50+ powerful AI tools. Smart categories, interactive comparisons, daily challenges. Join a million users!"
 >
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-badge">
       <span class="live-dot"></span>
-      <span>مباشر — {tools.length} أداة محدثة الآن</span>
+      <span>Live — {tools.length} tools updated now</span>
     </div>
     
     <h1>
-      اكتشف عالم<br />
-      <span class="gradient-text">الذكاء الاصطناعي</span><br />
-      بأسلوب جديد
+      Discover the World of<br />
+      <span class="gradient-text">Artificial Intelligence</span><br />
+      Like Never Before
     </h1>
     
     <p class="hero-subtitle">
-      دليل تفاعلي يكبر معاك. اكتشف أدوات AI خارقة، العب، تنافس، واكسب مكافآت حقيقية. 
-      مجاني 100% للأبد.
+      An interactive directory that grows with you. Discover powerful AI tools, play, compete, and earn real rewards. 
+      100% free forever.
     </p>
     
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-value">{totalTools}+</div>
-        <div class="stat-label">أداة</div>
+        <div class="stat-label">Tools</div>
       </div>
       <div class="stat-item">
         <div class="stat-value">{totalUsers}</div>
-        <div class="stat-label">مستخدم</div>
+        <div class="stat-label">Users</div>
       </div>
       <div class="stat-item">
         <div class="stat-value">4.9</div>
-        <div class="stat-label">تقييم</div>
+        <div class="stat-label">Rating</div>
       </div>
     </div>
     
     <div class="hero-cta">
       <a href="#tools" class="btn-primary">
         <span>🚀</span>
-        ابدأ الاستكشاف
+        Start Exploring
       </a>
-      <a href="/game/" class="btn-secondary">
+      <a href="/game.html" class="btn-secondary">
         <span>🎮</span>
-        العب الآن
+        Play Now
       </a>
     </div>
   </section>
@@ -91,8 +91,8 @@ const totalTools = tools.length;
     <input 
       type="text" 
       class="search-bar" 
-      placeholder="ابحث عن أداة AI... (جرب: 'مجاني' أو 'برمجة')" 
-      aria-label="البحث في الأدوات"
+      placeholder="Search for an AI tool... (try: 'free' or 'coding')" 
+      aria-label="Search tools"
     />
   </section>
 
@@ -103,7 +103,7 @@ const totalTools = tools.length;
         🌸 {seasons.currentSeason.name}
       </h3>
       <p style="opacity: 0.8; font-size: 0.9rem;">
-        {seasons.currentSeason.specialEvents?.[0]?.description || 'أحداث موسمية حصرية!'}
+        {seasons.currentSeason.specialEvents?.[0]?.description || 'Exclusive seasonal events!'}
       </p>
     </section>
   )}
@@ -113,7 +113,7 @@ const totalTools = tools.length;
     <div class="section-header">
       <h2 class="section-title">
         <span>📂</span>
-        التصنيفات
+        Categories
       </h2>
     </div>
     
@@ -130,7 +130,7 @@ const totalTools = tools.length;
               {icons[i % icons.length]}
             </span>
             <div class="category-name">{cat}</div>
-            <div class="category-count">{count} أداة</div>
+            <div class="category-count">{count} tools</div>
           </a>
         );
       })}
@@ -142,11 +142,11 @@ const totalTools = tools.length;
     <div class="section-header">
       <h2 class="section-title">
         <span>🔥</span>
-        الأكثر رواجاً
+        Trending Now
       </h2>
       <span class="live-indicator">
         <span class="live-dot"></span>
-        مباشر
+        LIVE
       </span>
     </div>
     
@@ -173,15 +173,15 @@ const totalTools = tools.length;
               </span>
               <span class="tool-users">{tool.users}</span>
               <span class={`tool-pricing pricing-${tool.pricing.toLowerCase()}`}>
-                {tool.pricing === 'Free' ? 'مجاني' : tool.pricing === 'Freemium' ? 'مجاني/مدفوع' : 'مدفوع'}
+                {tool.pricing === 'Free' ? 'Free' : tool.pricing === 'Freemium' ? 'Freemium' : 'Paid'}
               </span>
             </div>
             <div class="tool-actions">
-              <a href={tool.url} target="_blank" rel="noopener" class="btn-tool" onclick={`if(window.dopamine) window.dopamine.addPoints(5, 'زيارة أداة')`}>
-                جربها ⚡
+              <a href={tool.url} target="_blank" rel="noopener" class="btn-tool" onclick={`if(window.dopamine) window.dopamine.addPoints(5, 'tool visit')`}>
+                Try It ⚡
               </a>
               <a href={`/tools/${tool.id}/`} class="btn-tool">
-                التفاصيل 🔍
+                Details 🔍
               </a>
             </div>
           </article>
@@ -195,7 +195,7 @@ const totalTools = tools.length;
     <div class="section-header">
       <h2 class="section-title">
         <span>✨</span>
-        أدوات مميزة
+        Featured Tools
       </h2>
     </div>
     
@@ -217,15 +217,15 @@ const totalTools = tools.length;
             </span>
             <span class="tool-users">{tool.users}</span>
             <span class={`tool-pricing pricing-${tool.pricing.toLowerCase()}`}>
-              {tool.pricing === 'Free' ? 'مجاني' : tool.pricing === 'Freemium' ? 'مجاني/مدفوع' : 'مدفوع'}
+              {tool.pricing === 'Free' ? 'Free' : tool.pricing === 'Freemium' ? 'Freemium' : 'Paid'}
             </span>
           </div>
           <div class="tool-actions">
             <a href={tool.url} target="_blank" rel="noopener" class="btn-tool">
-              جربها ⚡
+              Try It ⚡
             </a>
             <a href={`/tools/${tool.id}/`} class="btn-tool">
-              التفاصيل 🔍
+              Details 🔍
             </a>
           </div>
         </article>
@@ -235,7 +235,7 @@ const totalTools = tools.length;
     <div style="text-align: center; margin-top: 2rem;">
       <a href="/tools/" class="btn-primary" style="display: inline-flex;">
         <span>👁️</span>
-        عرض كل الأدوات ({tools.length})
+        View All Tools ({tools.length})
       </a>
     </div>
   </section>
@@ -244,7 +244,7 @@ const totalTools = tools.length;
   {trending.hotSearches && trending.hotSearches.length > 0 && (
     <section style="margin: 3rem 0;">
       <h3 style="font-size: 1.2rem; margin-bottom: 1rem; opacity: 0.8;">
-        🔥 عمليات البحث الشائعة
+        🔥 Trending Searches
       </h3>
       <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
         {trending.hotSearches.map(search => (
@@ -265,7 +265,7 @@ const totalTools = tools.length;
     <div class="section-header">
       <h2 class="section-title">
         <span>🏆</span>
-        لوحة الصدارة
+        Leaderboard
       </h2>
     </div>
     <div class="leaderboard">
@@ -291,7 +291,7 @@ const totalTools = tools.length;
       </div>
       <div class="leader-item" style="border: 1px solid var(--neon-green); background: rgba(0,255,136,0.05);">
         <span class="leader-rank rank-other">?</span>
-        <span class="leader-name" style="color: var(--neon-green);">أنت</span>
+        <span class="leader-name" style="color: var(--neon-green);">You</span>
         <span class="leader-score" id="leaderboard-me">0</span>
       </div>
     </div>
@@ -300,25 +300,25 @@ const totalTools = tools.length;
   <!-- CTA Section -->
   <section style="text-align: center; padding: 4rem 0; margin: 3rem 0; background: var(--bg-glass); border-radius: 32px; border: 1px solid var(--border-glow);">
     <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-      جاهز تبدأ رحلتك؟ 🚀
+      Ready to Start Your Journey? 🚀
     </h2>
     <p style="opacity: 0.7; margin-bottom: 2rem;">
-      انضم لمليون مستخدم يكتشفون أدوات AI كل يوم
+      Join a million users discovering AI tools every day
     </p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="/game/" class="btn-primary" style="font-size: 1.1rem;">
+      <a href="/game.html" class="btn-primary" style="font-size: 1.1rem;">
         <span>🎮</span>
-        العب Zaki's Tool Run
+        Play Zaki's Tool Run
       </a>
       <a href="https://github.com/YOUR_USERNAME/zakihub" target="_blank" class="btn-secondary" style="font-size: 1.1rem;">
         <span>⭐</span>
-        نجمة على GitHub
+        Star on GitHub
       </a>
     </div>
   </section>
 
   <script>
-    // تحديث نقاط المستخدم في لوحة الصدارة
+    // Update user points in leaderboard
     const points = localStorage.getItem('zaki-points') || 0;
     const meEl = document.getElementById('leaderboard-me');
     if (meEl) meEl.textContent = parseInt(points).toLocaleString();
