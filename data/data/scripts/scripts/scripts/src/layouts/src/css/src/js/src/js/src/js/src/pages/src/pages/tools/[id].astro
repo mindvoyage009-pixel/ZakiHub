@@ -49,9 +49,9 @@ const prosConsSchema = {
   <div style="max-width: 900px; margin: 0 auto;">
     <!-- Breadcrumb -->
     <nav style="margin-bottom: 2rem; opacity: 0.6; font-size: 0.9rem;">
-      <a href="/" style="color: inherit; text-decoration: none;">الرئيسية</a>
+      <a href="/" style="color: inherit; text-decoration: none;">Home</a>
       <span style="margin: 0 0.5rem;">/</span>
-      <a href="/tools/" style="color: inherit; text-decoration: none;">الأدوات</a>
+      <a href="/tools/" style="color: inherit; text-decoration: none;">Tools</a>
       <span style="margin: 0 0.5rem;">/</span>
       <span style="color: var(--neon-green);">{tool.name}</span>
     </nav>
@@ -69,28 +69,28 @@ const prosConsSchema = {
       <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
         <div style="text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-gold);">⭐ {tool.rating}</div>
-          <div style="font-size: 0.8rem; opacity: 0.6;">التقييم</div>
+          <div style="font-size: 0.8rem; opacity: 0.6;">Rating</div>
         </div>
         <div style="text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-cyan);">{tool.users}</div>
-          <div style="font-size: 0.8rem; opacity: 0.6;">مستخدم</div>
+          <div style="font-size: 0.8rem; opacity: 0.6;">Users</div>
         </div>
         <div style="text-align: center;">
           <div style="font-size: 1.8rem; font-weight: 800; color: var(--neon-pink);">
-            {tool.pricing === 'Free' ? 'مجاني' : tool.pricing === 'Freemium' ? 'مجاني/مدفوع' : 'مدفوع'}
+            {tool.pricing === 'Free' ? 'Free' : tool.pricing === 'Freemium' ? 'Freemium' : 'Paid'}
           </div>
-          <div style="font-size: 0.8rem; opacity: 0.6;">السعر</div>
+          <div style="font-size: 0.8rem; opacity: 0.6;">Price</div>
         </div>
       </div>
     </div>
 
     <!-- Description -->
     <div class="glass" style="padding: 2rem; border-radius: 24px; margin-bottom: 2rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">📝 الوصف</h2>
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">📝 Description</h2>
       <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9;">{tool.description}</p>
       
       <div style="margin-top: 1.5rem;">
-        <h3 style="font-size: 1rem; margin-bottom: 0.75rem; opacity: 0.8;">🏷️ الوسوم</h3>
+        <h3 style="font-size: 1rem; margin-bottom: 0.75rem; opacity: 0.8;">🏷️ Tags</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
           {tool.tags?.map(tag => (
             <span style="padding: 0.35rem 0.9rem; border-radius: 20px; background: var(--bg-glass); border: 1px solid var(--border-glass); font-size: 0.85rem;">
@@ -103,7 +103,7 @@ const prosConsSchema = {
 
     <!-- Features -->
     <div class="glass" style="padding: 2rem; border-radius: 24px; margin-bottom: 2rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">✨ المميزات</h2>
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">✨ Features</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
         {tool.features?.map(feature => (
           <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: rgba(0,255,136,0.05); border-radius: 16px; border: 1px solid rgba(0,255,136,0.1);">
@@ -117,7 +117,7 @@ const prosConsSchema = {
     <!-- Pros & Cons -->
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
       <div class="glass" style="padding: 2rem; border-radius: 24px; border-top: 3px solid var(--neon-green);">
-        <h3 style="color: var(--neon-green); margin-bottom: 1rem; font-size: 1.2rem;">👍 الإيجابيات</h3>
+        <h3 style="color: var(--neon-green); margin-bottom: 1rem; font-size: 1.2rem;">👍 Pros</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
           {tool.pros?.map(pro => (
             <li style="display: flex; align-items: center; gap: 0.5rem;">
@@ -129,7 +129,7 @@ const prosConsSchema = {
       </div>
       
       <div class="glass" style="padding: 2rem; border-radius: 24px; border-top: 3px solid var(--neon-pink);">
-        <h3 style="color: var(--neon-pink); margin-bottom: 1rem; font-size: 1.2rem;">👎 السلبيات</h3>
+        <h3 style="color: var(--neon-pink); margin-bottom: 1rem; font-size: 1.2rem;">👎 Cons</h3>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
           {tool.cons?.map(con => (
             <li style="display: flex; align-items: center; gap: 0.5rem;">
@@ -143,7 +143,7 @@ const prosConsSchema = {
 
     <!-- CTA -->
     <div style="text-align: center; padding: 3rem; background: var(--bg-glass); border-radius: 32px; border: 1px solid var(--border-glow);">
-      <h2 style="margin-bottom: 1.5rem;">جاهز تجرب {tool.name}؟</h2>
+      <h2 style="margin-bottom: 1.5rem;">Ready to try {tool.name}?</h2>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a 
           href={tool.url} 
@@ -151,27 +151,27 @@ const prosConsSchema = {
           rel="noopener" 
           class="btn-primary" 
           style="font-size: 1.2rem; padding: 1rem 2.5rem;"
-          onclick="if(window.dopamine) { window.dopamine.discoverTool('{tool.id}'); window.dopamine.addPoints(15, 'زيارة رسمية'); }"
+          onclick="if(window.dopamine) { window.dopamine.discoverTool('{tool.id}'); window.dopamine.addPoints(15, 'official visit'); }"
         >
           <span>🚀</span>
-          جرب {tool.name} الآن
+          Try {tool.name} Now
         </a>
         <button 
           class="btn-secondary" 
           style="font-size: 1.2rem; padding: 1rem 2.5rem;"
-          onclick="if(window.dopamine) { window.dopamine.addPoints(5, 'مشاركة'); window.dopamine.showToast('🔗 تم نسخ الرابط!', 'success'); navigator.clipboard.writeText(window.location.href); }"
+          onclick="if(window.dopamine) { window.dopamine.addPoints(5, 'share'); window.dopamine.showToast('🔗 Link copied!', 'success'); navigator.clipboard.writeText(window.location.href); }"
         >
           <span>📤</span>
-          مشاركة
+          Share
         </button>
       </div>
     </div>
 
     <!-- Related Tools -->
     <div style="margin-top: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">🛠️ أدوات مشابهة</h2>
+      <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">🛠️ Similar Tools</h2>
       <div class="tools-grid">
-        {/* هنا يمكن إضافة أدوات من نفس الفئة */}
+        {/* Add tools from same category here */}
       </div>
     </div>
   </div>
