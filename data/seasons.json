@@ -1,6 +1,6 @@
 {
   "currentSeason": {
-    "name": "ربيع الذكاء 2026",
+    "name": "Spring of Intelligence 2026",
     "theme": "spring-ai",
     "startDate": "2026-03-20",
     "endDate": "2026-06-20",
@@ -11,29 +11,29 @@
     },
     "specialEvents": [
       {
-        "name": "أسبوع المبرمجين",
+        "name": "Developers Week",
         "date": "2026-05-10",
-        "description": "خصومات على أدوات البرمجة + تحديات يومية",
+        "description": "Discounts on coding tools + daily challenges",
         "bonusMultiplier": 2
       },
       {
-        "name": "يوم المصممين العالمي",
+        "name": "World Designers Day",
         "date": "2026-04-27",
-        "description": "اكتشف أدوات التصميم واربح شارة المصمم",
+        "description": "Discover design tools and earn the Designer badge",
         "bonusMultiplier": 1.5
       }
     ],
     "exclusiveRewards": [
-      {"type": "avatar", "name": "🌸 زاكي الربيع", "unlockCondition": "زيارة 5 أيام في الأسبوع"},
-      {"type": "badge", "name": "🌱 باذر المعرفة", "unlockCondition": "اكتشف 20 أداة جديدة"}
+      {"type": "avatar", "name": "🌸 Spring Zaki", "unlockCondition": "Visit 5 days in a week"},
+      {"type": "badge", "name": "🌱 Knowledge Seed", "unlockCondition": "Discover 20 new tools"}
     ]
   },
   "upcomingSeasons": [
     {
-      "name": "صيف الابتكار 2026",
+      "name": "Summer of Innovation 2026",
       "theme": "summer-innovation",
       "startDate": "2026-06-21",
-      "preview": "تحديات عالمية + بطولات أسبوعية"
+      "preview": "Global challenges + weekly tournaments"
     }
   ]
 }
