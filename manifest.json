@@ -1,67 +1,20 @@
 {
-  "name": "ZakiHub - منصة أدوات الذكاء الاصطناعي",
+  "name": "ZakiHub - دليل أدوات الذكاء الاصطناعي",
   "short_name": "ZakiHub",
-  "description": "اكتشف أفضل وأحدث أدوات الذكاء الاصطناعي في مكان واحد",
+  "description": "أفضل دليل أدوات الذكاء الاصطناعي مع تجربة مستخدم لا تُنسى",
   "start_url": "/",
-  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
-  "theme_color": "#0f172a",
   "background_color": "#020617",
-  "categories": ["productivity", "utilities"],
-  "screenshots": [
-    {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%230f172a' width='192' height='192'/><text x='96' y='96' font-size='80' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>🚀</text></svg>",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%230f172a' width='512' height='512'/><text x='256' y='256' font-size='200' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>🚀</text></svg>",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "form_factor": "wide"
-    }
-  ],
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%230f172a' width='192' height='192'/><text x='96' y='96' font-size='80' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>🚀</text></svg>",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%230f172a' width='512' height='512'/><text x='256' y='256' font-size='200' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>🚀</text></svg>",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "استكشف الأدوات",
-      "short_name": "الأدوات",
-      "description": "انتقل مباشرة إلى قائمة الأدوات المتاحة",
-      "url": "/?view=tools",
-      "icons": [{"src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text x='48' y='48' font-size='40' fill='%2300d4ff' text-anchor='middle' dominant-baseline='central'>🛠️</text></svg>", "sizes": "96x96", "type": "image/svg+xml"}]
-    },
-    {
-      "name": "التحدي اليومي",
-      "short_name": "التحدي",
-      "description": "انتقل إلى التحدي اليومي واكسب النقاط",
-      "url": "/?view=challenge",
-      "icons": [{"src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text x='48' y='48' font-size='40' fill='%23f97316' text-anchor='middle' dominant-baseline='central'>🎯</text></svg>", "sizes": "96x96", "type": "image/svg+xml"}]
-    }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "POST",
-    "enctype": "application/x-www-form-urlencoded",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  },
-  "prefer_related_applications": false
+  "categories": ["productivity", "utilities", "education"],
+  "lang": "ar",
+  "dir": "rtl"
 }

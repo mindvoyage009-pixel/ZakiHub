@@ -11,6 +11,7 @@
 | `script.js` | JavaScript + محرك الإعلانات |
 | `game.html` | لعبة Zaki's Tool Run |
 | `admin.html` | لوحة التحكم المحلية |
+| `blog.html` | المدونة مع 6 مقالات SEO |
 | `404.html` | صفحة الخطأ |
 | `manifest.json` | إعدادات PWA |
 | `service-worker.js` | Service Worker للـ Offline |
