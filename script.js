@@ -105,15 +105,40 @@ function goSmartlink() {
     window.open('https://www.profitablecpmratenetwork.com/jq0pcdxf?key=be341c6dcba5c5cd299858b0271bbbe6', '_blank');
 }
 
-// ─── Attach smartlink to tool detail buttons ───
-function attachSmartlinks() {
-    document.querySelectorAll('.btn-tool, .tool-card button').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            if (Math.random() < 0.30) {
-                goSmartlink();
-            }
-        });
-    });
+// ─── Banner Loader using iframe (RELIABLE METHOD) ───
+function loadBanner(key, containerId, width, height) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Clear container
+    container.innerHTML = '';
+
+    // Method 1: Direct script injection (most reliable for these networks)
+    const script1 = document.createElement('script');
+    script1.type = 'text/javascript';
+    script1.innerHTML = 'atOptions = {\'key\': \'' + key + '\',\'format\': \'iframe\',\'height\': ' + height + ',\'width\': ' + width + ',\'params\': {}};';
+    container.appendChild(script1);
+
+    const script2 = document.createElement('script');
+    script2.type = 'text/javascript';
+    script2.src = 'https://www.highperformanceformat.com/' + key + '/invoke.js';
+    container.appendChild(script2);
+
+    // Add a visible placeholder while loading
+    container.style.background = 'rgba(0,212,255,0.05)';
+    container.style.border = '1px dashed rgba(0,212,255,0.2)';
+    container.style.borderRadius = '8px';
+    container.style.minHeight = height + 'px';
+    container.style.display = 'flex';
+    container.style.alignItems = 'center';
+    container.style.justifyContent = 'center';
+
+    // Remove placeholder styling after ad loads
+    setTimeout(() => {
+        container.style.background = '';
+        container.style.border = '';
+        container.style.display = '';
+    }, 3000);
 }
 
 // ─── Native Banner Injector (In-feed) ───
@@ -126,26 +151,18 @@ function injectNativeAds() {
             const adDiv = document.createElement('div');
             adDiv.className = 'tool-card ad-infeed';
             adDiv.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:250px;background:rgba(0,212,255,0.03);border:1px dashed rgba(0,212,255,0.3);';
-            adDiv.innerHTML = '<div style="color:var(--muted);font-size:0.8em;">إعلان</div>';
+            adDiv.innerHTML = '<div id="native-ad-' + i + '" style="width:300px;height:250px;"></div>';
             cards[idx].after(adDiv);
             // Load native script
-            const ns = document.createElement('script');
-            ns.async = true;
-            ns.setAttribute('data-cfasync', 'false');
-            ns.src = 'https://pl29343492.profitablecpmratenetwork.com/2dd3e1bbf97c4c9ff588286aa0579fd8/invoke.js';
-            adDiv.appendChild(ns);
+            setTimeout(() => {
+                const ns = document.createElement('script');
+                ns.async = true;
+                ns.setAttribute('data-cfasync', 'false');
+                ns.src = 'https://pl29343492.profitablecpmratenetwork.com/2dd3e1bbf97c4c9ff588286aa0579fd8/invoke.js';
+                document.getElementById('native-ad-' + i).appendChild(ns);
+            }, 1000);
         }
     });
-}
-
-// ─── Popunder Trigger (once per session) ───
-function triggerPopunder() {
-    if (!sessionStorage.getItem('popunderFired')) {
-        sessionStorage.setItem('popunderFired', '1');
-        const pu = document.createElement('script');
-        pu.src = 'https://pl29343187.profitablecpmratenetwork.com/e0/fb/03/e0fb0368da611542da976cbf9a2d59c5.js';
-        document.body.appendChild(pu);
-    }
 }
 
 // ─── Social Bar Loader ───
@@ -155,68 +172,22 @@ function loadSocialBar() {
     document.body.appendChild(sb);
 }
 
-// ─── Banner Loaders by ID ───
-function loadBanner(key, containerId, width, height) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    const script1 = document.createElement('script');
-    script1.type = 'text/javascript';
-    script1.text = "atOptions = {'key': '" + key + "','format': 'iframe','height': " + height + ",'width': " + width + ",'params': {}};";
-    container.appendChild(script1);
-    const script2 = document.createElement('script');
-    script2.type = 'text/javascript';
-    script2.src = 'https://www.highperformanceformat.com/' + key + '/invoke.js';
-    container.appendChild(script2);
-}
-
-// ─── Interstitial on page load ───
-function loadInterstitial() {
-    const inter = document.createElement('script');
-    inter.type = 'text/javascript';
-    inter.text = "atOptions = {'key': 'e68c05c95fb7752495fe2cf1a9dfdcd6','format': 'iframe','height': 250,'width': 300,'params': {}};";
-    const inter2 = document.createElement('script');
-    inter2.type = 'text/javascript';
-    inter2.src = 'https://www.highperformanceformat.com/e68c05c95fb7752495fe2cf1a9dfdcd6/invoke.js';
-    const overlay = document.createElement('div');
-    overlay.id = 'interstitial-overlay';
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;';
-    overlay.innerHTML = '<div style="color:var(--light);font-size:1.2em;">جاري التحميل...</div><button onclick="document.getElementById('interstitial-overlay').remove()" style="padding:10px 30px;background:var(--primary);border:none;border-radius:50px;color:var(--dark);font-weight:700;cursor:pointer;">تخطي الإعلان</button>';
-    overlay.appendChild(inter);
-    overlay.appendChild(inter2);
-    document.body.appendChild(overlay);
-    setTimeout(() => { const o = document.getElementById('interstitial-overlay'); if(o) o.remove(); }, 8000);
-}
-
 // ─── Initialize all ads on DOM ready ───
 document.addEventListener('DOMContentLoaded', function() {
     createStars();
     displayTools('all');
 
-    // Load banners
-    loadBanner('bad51f87ef80d0eb81cd43d40e5401c2', 'ad-728x90', 728, 90);
-    loadBanner('e68c05c95fb7752495fe2cf1a9dfdcd6', 'ad-300x250', 300, 250);
-    loadBanner('6b241b3fe5278cdfa489ac924e4b78fb', 'ad-468x60', 468, 60);
-    loadBanner('96531542723fc03951c9f6652c893e96', 'ad-160x300', 160, 300);
-    loadBanner('1967414f203476ae35465a7608d8429e', 'ad-160x600', 160, 600);
-    loadBanner('35078bd6fffc731bff0380b63ecf8132', 'ad-320x50', 320, 50);
+    // Load banners with delay to ensure DOM is ready
+    setTimeout(() => loadBanner('bad51f87ef80d0eb81cd43d40e5401c2', 'ad-728x90', 728, 90), 500);
+    setTimeout(() => loadBanner('e68c05c95fb7752495fe2cf1a9dfdcd6', 'ad-300x250', 300, 250), 700);
+    setTimeout(() => loadBanner('6b241b3fe5278cdfa489ac924e4b78fb', 'ad-468x60', 468, 60), 900);
+    setTimeout(() => loadBanner('96531542723fc03951c9f6652c893e96', 'ad-160x300', 160, 300), 1100);
+    setTimeout(() => loadBanner('1967414f203476ae35465a7608d8429e', 'ad-160x600', 160, 600), 1300);
+    setTimeout(() => loadBanner('35078bd6fffc731bff0380b63ecf8132', 'ad-320x50', 320, 50), 1500);
 
     // Inject native ads
-    injectNativeAds();
-
-    // Attach smartlinks
-    attachSmartlinks();
-
-    // Popunder on first click
-    document.addEventListener('click', function() {
-        triggerPopunder();
-    }, { once: true });
+    setTimeout(injectNativeAds, 2000);
 
     // Social bar after 3 seconds
     setTimeout(loadSocialBar, 3000);
-
-    // Interstitial after 5 seconds (first visit only)
-    if (!localStorage.getItem('interstitialShown')) {
-        localStorage.setItem('interstitialShown', '1');
-        setTimeout(loadInterstitial, 5000);
-    }
 });

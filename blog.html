@@ -656,30 +656,42 @@
             link.textContent = content.classList.contains('active') ? 'إخفاء المقال ↓' : 'اقرأ المقال ←';
         }
 
-        // Banner Loaders
+        // Banner Loader with visible container
         function loadBanner(key, containerId, width, height) {
             const container = document.getElementById(containerId);
             if (!container) return;
+            container.innerHTML = '';
             const script1 = document.createElement('script');
             script1.type = 'text/javascript';
-            script1.text = "atOptions = {'key': '" + key + "','format': 'iframe','height': " + height + ",'width': " + width + ",'params': {}};";
+            script1.innerHTML = 'atOptions = {'key': '' + key + '','format': 'iframe','height': ' + height + ','width': ' + width + ','params': {}};';
             container.appendChild(script1);
             const script2 = document.createElement('script');
             script2.type = 'text/javascript';
             script2.src = 'https://www.highperformanceformat.com/' + key + '/invoke.js';
             container.appendChild(script2);
+            container.style.background = 'rgba(0,212,255,0.05)';
+            container.style.border = '1px dashed rgba(0,212,255,0.2)';
+            container.style.borderRadius = '8px';
+            container.style.minHeight = height + 'px';
+            container.style.display = 'flex';
+            container.style.alignItems = 'center';
+            container.style.justifyContent = 'center';
+            setTimeout(() => {
+                container.style.background = '';
+                container.style.border = '';
+                container.style.display = '';
+            }, 3000);
         }
 
         document.addEventListener('DOMContentLoaded', function() {
             createStars();
-            loadBanner('bad51f87ef80d0eb81cd43d40e5401c2', 'ad-728x90', 728, 90);
-            loadBanner('e68c05c95fb7752495fe2cf1a9dfdcd6', 'ad-300x250', 300, 250);
-            loadBanner('6b241b3fe5278cdfa489ac924e4b78fb', 'ad-468x60', 468, 60);
-            loadBanner('96531542723fc03951c9f6652c893e96', 'ad-160x300', 160, 300);
-            loadBanner('1967414f203476ae35465a7608d8429e', 'ad-160x600', 160, 600);
-            loadBanner('35078bd6fffc731bff0380b63ecf8132', 'ad-320x50', 320, 50);
+            setTimeout(() => loadBanner('bad51f87ef80d0eb81cd43d40e5401c2', 'ad-728x90', 728, 90), 500);
+            setTimeout(() => loadBanner('e68c05c95fb7752495fe2cf1a9dfdcd6', 'ad-300x250', 300, 250), 700);
+            setTimeout(() => loadBanner('6b241b3fe5278cdfa489ac924e4b78fb', 'ad-468x60', 468, 60), 900);
+            setTimeout(() => loadBanner('96531542723fc03951c9f6652c893e96', 'ad-160x300', 160, 300), 1100);
+            setTimeout(() => loadBanner('1967414f203476ae35465a7608d8429e', 'ad-160x600', 160, 600), 1300);
+            setTimeout(() => loadBanner('35078bd6fffc731bff0380b63ecf8132', 'ad-320x50', 320, 50), 1500);
 
-            // Social Bar after 3 seconds
             setTimeout(function(){
                 var sb = document.createElement('script');
                 sb.src = 'https://pl29343495.profitablecpmratenetwork.com/cc/4f/d3/cc4fd3a658121f3e0c7c0dd88998176a.js';
