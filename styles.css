@@ -1,0 +1,131 @@
+:root {
+  --primary: #00d4ff;
+  --secondary: #a78bfa;
+  --accent: #f97316;
+  --dark: #0f172a;
+  --darker: #020617;
+  --light: #f1f5f9;
+  --muted: #64748b;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--darker) 0%, #1a0f2e 50%, var(--dark) 100%);
+  color: var(--light);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* أنيميشنات متقدمة */
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--secondary);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--primary), 0 0 40px var(--secondary), 0 0 60px var(--accent);
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes bounce3d {
+  0%, 100% {
+    transform: translateY(0) rotateX(0);
+  }
+  50% {
+    transform: translateY(-30px) rotateX(20deg);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+/* مؤثرات تفاعلية */
+.interactive-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: linear-gradient(135deg, var(--darker) 0%, #1a0f2e 50%, var(--dark) 100%);
+}
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* أزرار محسنة */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-glow:hover::before {
+  left: 100%;
+}
+
+/* الكروت المتقدمة */
+.card-elevated {
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-elevated:hover {
+  transform: translateZ(20px) rotateX(5deg);
+}
+
+/* خدمات غير مرئية */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}

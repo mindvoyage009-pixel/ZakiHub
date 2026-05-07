@@ -1,0 +1,86 @@
+{
+  "tools": [
+    {
+      "id": 1,
+      "name": "ChatGPT",
+      "description": "نموذج لغة متقدم للحوار والإجابة على الأسئلة",
+      "category": "writing",
+      "emoji": "🤖",
+      "rating": 4.9,
+      "users": "2M+",
+      "price": "مجاني + Premium",
+      "link": "https://chat.openai.com",
+      "features": ["الحوار الذكي", "كتابة المحتوى", "البرمجة", "التحليل"]
+    },
+    {
+      "id": 2,
+      "name": "Midjourney",
+      "description": "توليد الصور من النصوص بجودة احترافية",
+      "category": "design",
+      "emoji": "🎨",
+      "rating": 4.8,
+      "users": "500K+",
+      "price": "$10-120/شهر",
+      "link": "https://midjourney.com",
+      "features": ["توليد الصور", "التحرير", "الأنماط", "الإنشاء"]
+    },
+    {
+      "id": 3,
+      "name": "GitHub Copilot",
+      "description": "مساعد برمجة ذكي يكتب الكود معك",
+      "category": "code",
+      "emoji": "💻",
+      "rating": 4.7,
+      "users": "1M+",
+      "price": "$10/شهر",
+      "link": "https://github.com/features/copilot",
+      "features": ["إتمام الكود", "شرح الأكواد", "الاقتراحات", "الدعم المتعدد"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": 1,
+      "name": "المستكشف",
+      "description": "زر 10 أدوات مختلفة",
+      "icon": "🔍",
+      "points": 50
+    },
+    {
+      "id": 2,
+      "name": "الصاعد",
+      "description": "أكمل 5 تحديات يومية",
+      "icon": "📈",
+      "points": 100
+    },
+    {
+      "id": 3,
+      "name": "الخبير",
+      "description": "احصل على 500 نقطة",
+      "icon": "⭐",
+      "points": 200
+    }
+  ],
+  "challenges": [
+    {
+      "id": 1,
+      "title": "اكتشف أداة جديدة",
+      "description": "استكشف واستخدم أداة جديدة لم تجربها من قبل",
+      "reward": 50,
+      "difficulty": "سهل"
+    },
+    {
+      "id": 2,
+      "title": "أتقن أداة واحدة",
+      "description": "اقضِ ساعة كاملة في استخدام أداة واحدة",
+      "reward": 150,
+      "difficulty": "متوسط"
+    },
+    {
+      "id": 3,
+      "title": "الماجستير",
+      "description": "استخدم 20 أداة مختلفة في أسبوع واحد",
+      "reward": 500,
+      "difficulty": "صعب"
+    }
+  ]
+}
