@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Popunder Ad -->
-  <script src="https://pl29343187.profitablecpmratenetwork.com/e0/fb/03/e0fb0368da611542da976cbf9a2d59c5.js"></script>
-  <title>Dashboard | ZakiHub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>لوحة التحكم | ZakiHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050510;
@@ -17,7 +15,7 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Cairo', sans-serif;
       background: var(--bg);
       color: #e0e0ff;
       min-height: 100vh;
@@ -25,7 +23,6 @@
     }
     .container { max-width: 1200px; margin: 0 auto; }
     h1 {
-      font-family: 'Space Grotesk', sans-serif;
       font-size: 2rem;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, var(--green), var(--cyan));
@@ -55,7 +52,6 @@
       margin-bottom: 0.5rem;
     }
     .card-value {
-      font-family: 'Space Grotesk', sans-serif;
       font-size: 2rem;
       font-weight: 800;
     }
@@ -64,35 +60,6 @@
     .card-value.pink { color: var(--pink); }
     .card-value.gold { color: var(--gold); }
     
-    .section {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .section h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-    th, td {
-      text-align: left;
-      padding: 0.75rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    th {
-      opacity: 0.6;
-      font-weight: 600;
-    }
     .back-btn {
       display: inline-flex;
       align-items: center;
@@ -122,152 +89,46 @@
       height: 100%;
       border-radius: 4px;
       transition: width 0.5s ease;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
     }
-    .btn-export {
-      padding: 0.75rem 1.5rem;
-      background: var(--green);
-      color: var(--bg);
-      border: none;
-      border-radius: 12px;
-      font-family: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      margin-right: 0.5rem;
-      transition: transform 0.2s;
-    }
-    .btn-export:hover { transform: scale(1.05); }
-    .btn-clear {
-      padding: 0.75rem 1.5rem;
-      background: var(--pink);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-family: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .btn-clear:hover { transform: scale(1.05); }
   </style>
 </head>
 <body>
   <div class="container">
-    <a href="/" class="back-btn">← Home</a>
-    <a href="blog.html" class="back-btn" style="margin-left:10px;">📰 Blog</a>
-    <a href="blog.html" class="back-btn" style="margin-right:10px;">📚 Blog</a>
-    <h1>📊 Local Dashboard</h1>
+    <a href="index.html" class="back-btn">← العودة للرئيسية</a>
+    <h1>📊 لوحة التحكم</h1>
     
     <div class="grid" id="stats-grid">
       <div class="card">
-        <div class="card-label">Total Points</div>
+        <div class="card-label">النقاط الكلية</div>
         <div class="card-value gold" id="stat-points">0</div>
       </div>
       <div class="card">
-        <div class="card-label">Current Level</div>
+        <div class="card-label">المستوى الحالي</div>
         <div class="card-value green" id="stat-level">1</div>
       </div>
       <div class="card">
-        <div class="card-label">Day Streak</div>
+        <div class="card-label">سلسلة الأيام</div>
         <div class="card-value cyan" id="stat-streak">0</div>
       </div>
       <div class="card">
-        <div class="card-label">Tools Discovered</div>
+        <div class="card-label">الأدوات المكتشفة</div>
         <div class="card-value pink" id="stat-tools">0</div>
       </div>
-    </div>
-    
-    <div class="section">
-      <h2><span>🏆</span> Achievements</h2>
-      <div id="achievements-list"></div>
-    </div>
-    
-    <div class="section">
-      <h2><span>📈</span> Progress</h2>
-      <div style="margin-bottom: 1rem;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-          <span>Progress to Next Level</span>
-          <span id="progress-text">0%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill" style="width: 0%; background: linear-gradient(90deg, var(--green), var(--cyan));"></div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="section">
-      <h2><span>💾</span> Local Data</h2>
-      <button onclick="exportData()" class="btn-export">Export JSON</button>
-      <button onclick="clearData()" class="btn-clear">Clear Data</button>
     </div>
   </div>
 
   <script>
     function loadStats() {
       const dopamine = JSON.parse(localStorage.getItem('zaki-dopamine') || '{}');
-      const memory = JSON.parse(localStorage.getItem('zaki-memory') || '{}');
       
       document.getElementById('stat-points').textContent = (dopamine.points || 0).toLocaleString();
       document.getElementById('stat-level').textContent = dopamine.level || 1;
       document.getElementById('stat-streak').textContent = dopamine.streak || 0;
       document.getElementById('stat-tools').textContent = (dopamine.toolsDiscovered || []).length;
-      
-      const points = dopamine.points || 0;
-      const level = dopamine.level || 1;
-      const nextLevel = level * 500;
-      const prevLevel = (level - 1) * 500;
-      const progress = Math.min(100, ((points - prevLevel) / (nextLevel - prevLevel)) * 100);
-      document.getElementById('progress-fill').style.width = progress + '%';
-      document.getElementById('progress-text').textContent = Math.floor(progress) + '%';
-      
-      const achievementsList = document.getElementById('achievements-list');
-      const unlocked = dopamine.achievements || [];
-      
-      if (unlocked.length === 0) {
-        achievementsList.innerHTML = '<p style="opacity: 0.6;">No achievements yet. Start exploring!</p>';
-      } else {
-        achievementsList.innerHTML = unlocked.map(id => `
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.2); border-radius: 50px; margin: 0.25rem;">
-            <span>🏆</span>
-            <span>${id}</span>
-          </div>
-        `).join('');
-      }
-    }
-    
-    function exportData() {
-      const data = {
-        dopamine: JSON.parse(localStorage.getItem('zaki-dopamine') || '{}'),
-        memory: JSON.parse(localStorage.getItem('zaki-memory') || '{}'),
-        exportedAt: new Date().toISOString()
-      };
-      
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `zakihub-backup-${Date.now()}.json`;
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-    
-    function clearData() {
-      if (confirm('Are you sure? This will erase all your progress!')) {
-        localStorage.removeItem('zaki-dopamine');
-        localStorage.removeItem('zaki-memory');
-        localStorage.removeItem('zaki-points');
-        location.reload();
-      }
     }
     
     loadStats();
   </script>
-<!-- Social Bar -->
-<script>
-  setTimeout(function(){
-    var sb = document.createElement('script');
-    sb.src = 'https://pl29343495.profitablecpmratenetwork.com/cc/4f/d3/cc4fd3a658121f3e0c7c0dd88998176a.js';
-    document.body.appendChild(sb);
-  }, 3000);
-</script>
 </body>
 </html>

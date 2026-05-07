@@ -15,8 +15,6 @@
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <!-- Popunder Ad -->
-    <script src="https://pl29343187.profitablecpmratenetwork.com/e0/fb/03/e0fb0368da611542da976cbf9a2d59c5.js"></script>
     <style>
         .blog-container { max-width: 900px; margin: 0 auto; padding: 100px 20px 40px; }
         .blog-header { text-align: center; margin-bottom: 60px; }
@@ -69,33 +67,6 @@
             gap: 5px;
         }
         .read-more:hover { text-decoration: underline; }
-        .article-content {
-            display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(0,212,255,0.1);
-        }
-        .article-content.active { display: block; }
-        .article-content h3 {
-            color: var(--primary);
-            margin: 20px 0 10px;
-            font-size: 1.2em;
-        }
-        .article-content ul, .article-content ol {
-            color: var(--muted);
-            line-height: 2;
-            padding-right: 20px;
-            margin-bottom: 15px;
-        }
-        .article-content li { margin-bottom: 8px; }
-        .article-content strong { color: var(--light); }
-        .article-content blockquote {
-            border-right: 3px solid var(--primary);
-            padding-right: 15px;
-            margin: 20px 0;
-            color: var(--muted);
-            font-style: italic;
-        }
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -104,31 +75,6 @@
             text-decoration: none;
             margin-bottom: 30px;
             font-weight: 600;
-        }
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 40px;
-        }
-        .page-btn {
-            padding: 10px 20px;
-            background: rgba(0,212,255,0.1);
-            border: 1px solid rgba(0,212,255,0.3);
-            color: var(--primary);
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .page-btn:hover, .page-btn.active {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        .ad-between-articles {
-            margin: 30px auto;
-            max-width: 300px;
-            min-height: 250px;
         }
     </style>
 </head>
@@ -155,549 +101,77 @@
             <p>أحدث المقالات والأخبار عن عالم الذكاء الاصطناعي وأدواته</p>
         </div>
 
-        <!-- Banner 728x90 -->
-        <div class="ad-container ad-top" id="ad-728x90"></div>
-
-        <!-- Article 1 -->
         <article class="article-card">
             <div class="article-meta">
                 <span class="article-tag">🤖 ذكاء اصطناعي</span>
                 <span class="article-date">7 مايو 2026</span>
             </div>
             <h2>دليل شامل لاستخدام ChatGPT في العمل والدراسة 2026</h2>
-            <p>تعرف على أحدث تقنيات استخدام ChatGPT لزيادة الإنتاجية في العمل والدراسة. من كتابة الإيميلات إلى تحليل البيانات...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>مقدمة</h3>
-                <p>ChatGPT تطور بشكل كبير في 2026 وأصبح أداة أساسية للمحترفين في جميع المجالات. في هذا المقال نستعرض أفضل الطرق لاستخدامه.</p>
-
-                <h3>1. كتابة المحتوى الاحترافي</h3>
-                <p>يمكنك استخدام ChatGPT لكتابة:</p>
-                <ul>
-                    <li>مقالات SEO متوافقة مع محركات البحث</li>
-                    <li>محتوى لوسائل التواصل الاجتماعي</li>
-                    <li>نصوص إعلانية مقنعة</li>
-                    <li>تقارير عمل شاملة</li>
-                </ul>
-
-                <h3>2. البرمجة والتطوير</h3>
-                <p>ChatGPT يمكنه:</p>
-                <ul>
-                    <li>كتابة أكواد بلغات متعددة (Python, JavaScript, C++)</li>
-                    <li>تصحيح الأخطاء البرمجية</li>
-                    <li>شرح المفاهيم البرمجية المعقدة</li>
-                    <li>إنشاء مشاريع كاملة</li>
-                </ul>
-
-                <h3>3. التعلم والدراسة</h3>
-                <p>للطلاب، ChatGPT أداة قوية:</p>
-                <ul>
-                    <li>شرح الدروس بطرق مبسطة</li>
-                    <li>حل مسائل الرياضيات والفيزياء</li>
-                    <li>تلخيص الكتب والمقالات الطويلة</li>
-                    <li>إعداد خطط دراسية مخصصة</li>
-                </ul>
-
-                <h3>الخلاصة</h3>
-                <p>ChatGPT ليس مجرد أداة محادثة، بل هو شريك ذكي يمكنه تحويل طريقة عملك ودراستك. ابدأ بتجربته اليوم!</p>
-            </div>
+            <p>تعرف على أحدث تقنيات استخدام ChatGPT لزيادة الإنتاجية في العمل والدراسة. من كتابة الإيميلات إلى تحليل البيانات بذكاء اصطناعي متقدم.</p>
+            <a href="#" class="read-more">اقرأ المقال ←</a>
         </article>
 
-        <!-- Banner 300x250 -->
-        <div class="ad-container ad-between-articles" id="ad-300x250"></div>
-
-        <!-- Article 2 -->
         <article class="article-card">
             <div class="article-meta">
                 <span class="article-tag">🎨 تصميم</span>
                 <span class="article-date">6 مايو 2026</span>
             </div>
             <h2>أفضل 10 أدوات AI للتصميم الجرافيكي في 2026</h2>
-            <p>استعراض شامل لأفضل أدوات الذكاء الاصطناعي التي تساعد المصممين في إنشاء تصاميم احترافية بسرعة فائقة...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>1. Midjourney v7</h3>
-                <p>أحدث إصدار من Midjourney يقدم دقة غير مسبوقة في توليد الصور. المميزات الجديدة تشمل:</p>
-                <ul>
-                    <li>دقة 8K افتراضية</li>
-                    <li>تحكم أفضل في الإضاءة والظلال</li>
-                    <li>دعم النصوص العربية في الصور</li>
-                    <li>وضع التصميم المعماري المتقدم</li>
-                </ul>
-
-                <h3>2. DALL-E 3</h3>
-                <p>من OpenAI، DALL-E 3 يتفوق في:</p>
-                <ul>
-                    <li>فهم التعليمات المعقدة</li>
-                    <li>توليد صور واقعية للغاية</li>
-                    <li>التكامل مع ChatGPT</li>
-                    <li>تحرير الصور بالذكاء الاصطناعي</li>
-                </ul>
-
-                <h3>3. Adobe Firefly</h3>
-                <p>أداة Adobe المتكاملة:</p>
-                <ul>
-                    <li>تكامل كامل مع Photoshop و Illustrator</li>
-                    <li>توليد نماذج 3D</li>
-                    <li>تعديل الفيديو بالذكاء الاصطناعي</li>
-                    <li>مكتبة خطوط وتصاميم جاهزة</li>
-                </ul>
-
-                <h3>4. Canva AI</h3>
-                <p>Canva أضافت ميزات AI قوية:</p>
-                <ul>
-                    <li>توليد تصاميم كاملة من وصف نصي</li>
-                    <li>إزالة الخلفية تلقائياً</li>
-                    <li>توليد فيديوهات قصيرة</li>
-                    <li>اقتراحات تصميم ذكية</li>
-                </ul>
-
-                <h3>5-10. أدوات أخرى مميزة</h3>
-                <ul>
-                    <li><strong>Stable Diffusion XL</strong> - مفتوح المصدر ومجاني</li>
-                    <li><strong>Leonardo AI</strong> - متخصص في تصميم الشخصيات</li>
-                    <li><strong>Runway ML</strong> - تحرير الفيديو بالذكاء الاصطناعي</li>
-                    <li><strong>Krea AI</strong> - تصميم في الوقت الفعلي</li>
-                    <li><strong>Playground AI</strong> - واجهة سهلة للمبتدئين</li>
-                    <li><strong>BlueWillow</strong> - بديل مجاني لـ Midjourney</li>
-                </ul>
-
-                <h3>نصيحة ذهبية</h3>
-                <blockquote>
-                    "لا تعتمد على أداة واحدة. الجمع بين 2-3 أدوات يعطي نتائج أفضل بكثير من استخدام أداة واحدة."
-                </blockquote>
-            </div>
+            <p>استعراض شامل لأفضل أدوات الذكاء الاصطناعي التي تساعد المصممين في إنشاء تصاميم احترافية بسرعة فائقة وبجودة عالية جداً.</p>
+            <a href="#" class="read-more">اقرأ المقال ←</a>
         </article>
 
-        <!-- Article 3 -->
         <article class="article-card">
             <div class="article-meta">
                 <span class="article-tag">💻 برمجة</span>
                 <span class="article-date">5 مايو 2026</span>
             </div>
             <h2>GitHub Copilot vs Cursor: أي مساعد برمجة أفضل؟</h2>
-            <p>مقارنة شاملة بين أشهر مساعدين البرمجة بالذكاء الاصطناعي. نستعرض المميزات والعيوب والسعر...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>GitHub Copilot</h3>
-                <p><strong>المميزات:</strong></p>
-                <ul>
-                    <li>تكامل مثالي مع VS Code</li>
-                    <li>يدعم 30+ لغة برمجة</li>
-                    <li>اقتراحات ذكية بناءً على السياق</li>
-                    <li>تعلم من كود GitHub العام</li>
-                </ul>
-                <p><strong>العيوب:</strong></p>
-                <ul>
-                    <li>سعر مرتفع ($10/شهر)</li>
-                    <li>يحتاج اتصال إنترنت</li>
-                    <li>قد ينتج كود غير دقيق أحياناً</li>
-                </ul>
-
-                <h3>Cursor</h3>
-                <p><strong>المميزات:</strong></p>
-                <ul>
-                    <li>واجهة محادثة متكاملة</li>
-                    <li>تعديل ملفات متعددة دفعة واحدة</li>
-                    <li>يدعم Claude و GPT-4</li>
-                    <li>مجاني للاستخدام الأساسي</li>
-                </ul>
-                <p><strong>العيوب:</strong></p>
-                <ul>
-                    <li>أقل دقة في اقتراحات الكود</li>
-                    <li>واجهة أقل تطوراً</li>
-                </ul>
-
-                <h3>النتيجة</h3>
-                <p>للمحترفين: <strong>GitHub Copilot</strong> أفضل للمشاريع الكبيرة.</p>
-                <p>للمبتدئين: <strong>Cursor</strong> أفضل بسبب الواجهة السهلة والسعر.</p>
-            </div>
+            <p>مقارنة شاملة بين أشهر مساعدين البرمجة بالذكاء الاصطناعي. نستعرض المميزات والعيوب والسعر والأداء.</p>
+            <a href="#" class="read-more">اقرأ المقال ←</a>
         </article>
 
-        <!-- Banner 300x250 -->
-        <div class="ad-container ad-between-articles" id="ad-300x250-2"></div>
-
-        <!-- Article 4 -->
         <article class="article-card">
             <div class="article-meta">
                 <span class="article-tag">🎬 فيديو</span>
                 <span class="article-date">4 مايو 2026</span>
             </div>
             <h2>كيف تصنع فيديو احترافي بالذكاء الاصطناعي في 10 دقائق</h2>
-            <p>دليل عملي خطوة بخطوة لإنشاء فيديوهات احترافية باستخدام أدوات AI بدون خبرة سابقة...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>الخطوة 1: كتابة السكريبت</h3>
-                <p>استخدم ChatGPT أو Jasper لكتابة سكريبت فيديو جذاب. النصائح:</p>
-                <ul>
-                    <li>ابدأ بسؤال يثير الفضول</li>
-                    <li>استخدم لغة بسيطة ومباشرة</li>
-                    <li>اضف دعوة للعمل في النهاية</li>
-                </ul>
-
-                <h3>الخطوة 2: توليد الصوت</h3>
-                <p>أدوات مثل ElevenLabs و Murf AI تقدم:</p>
-                <ul>
-                    <li>أصوات طبيعية 99%</li>
-                    <li>دعم 50+ لغة</li>
-                    <li>تعديل النبرة والسرعة</li>
-                </ul>
-
-                <h3>الخطوة 3: إنشاء الفيديو</h3>
-                <p>استخدم Synthesia أو HeyGen:</p>
-                <ul>
-                    <li>اختر شخصية افتراضية</li>
-                    <li>ارفع السكريبت والصوت</li>
-                    <li>اضف خلفية وشعار</li>
-                </ul>
-
-                <h3>الخطوة 4: المونتاج</h3>
-                <p>Runway ML و Descript يقدمان:</p>
-                <ul>
-                    <li>قص وترتيب تلقائي</li>
-                    <li>إضافة موسيقى خلفية</li>
-                    <li>ترجمة تلقائية</li>
-                </ul>
-
-                <h3>النتيجة</h3>
-                <p>في 10 دقائق فقط، لديك فيديو احترافي جاهز للنشر!</p>
-            </div>
+            <p>دليل عملي خطوة بخطوة لإنشاء فيديوهات احترافية باستخدام أدوات AI بدون خبرة سابقة في المونتاج.</p>
+            <a href="#" class="read-more">اقرأ المقال ←</a>
         </article>
 
-        <!-- Article 5 -->
         <article class="article-card">
             <div class="article-meta">
                 <span class="article-tag">✍️ كتابة</span>
                 <span class="article-date">3 مايو 2026</span>
             </div>
             <h2>Jasper vs Copy.ai: أفضل أداة لكتابة المحتوى التسويقي</h2>
-            <p>مقارنة تفصيلية بين أشهر أداتين لكتابة المحتوى بالذكاء الاصطناعي. أيهما يستحق استثمارك؟</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>Jasper</h3>
-                <p>السعر: $49/شهر | التقييم: ⭐⭐⭐⭐⭐</p>
-                <ul>
-                    <li>50+ قالب جاهز للمحتوى</li>
-                    <li>دعم SEO متكامل</li>
-                    <li>فريق عمل متعدد المستخدمين</li>
-                    <li>تكامل مع Surfer SEO</li>
-                </ul>
-
-                <h3>Copy.ai</h3>
-                <p>السعر: مجاني / $36/شهر | التقييم: ⭐⭐⭐⭐</p>
-                <ul>
-                    <li>90+ أداة كتابة</li>
-                    <li>واجهة أبسط</li>
-                    <li>خطة مجانية سخية</li>
-                    <li>ترجمة تلقائية</li>
-                </ul>
-
-                <h3>التوصية</h3>
-                <p>للشركات الكبيرة: <strong>Jasper</strong></p>
-                <p>للأفراد والمبتدئين: <strong>Copy.ai</strong></p>
-            </div>
+            <p>مقارنة تفصيلية بين أشهر أداتين لكتابة المحتوى بالذكاء الاصطناعي. أيهما يستحق استثمارك والقيمة المالية؟</p>
+            <a href="#" class="read-more">اقرأ المقال ←</a>
         </article>
 
-        <!-- Article 6 -->
         <article class="article-card">
             <div class="article-meta">
                 <span class="article-tag">🔊 صوت</span>
                 <span class="article-date">2 مايو 2026</span>
             </div>
             <h2>ElevenLabs: ثورة في تحويل النص إلى صوت طبيعي</h2>
-            <p>كل ما تريد معرفته عن ElevenLabs وكيف تستخدمه لإنشاء محتوى صوتي احترافي...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>ما هو ElevenLabs؟</h3>
-                <p>ElevenLabs هو أحدث تقنية لتحويل النص إلى صوت بجودة لا تُفرق عن الصوت البشري.</p>
-
-                <h3>المميزات الرئيسية</h3>
-                <ul>
-                    <li>29 لغة مدعومة بما فيها العربية</li>
-                    <li>1000+ صوت مختلف</li>
-                    <li>تقليد الأصوات (Voice Cloning)</li>
-                    <li>تحكم كامل في النبرة والسرعة</li>
-                </ul>
-
-                <h3>الاستخدامات</h3>
-                <ul>
-                    <li>تعليق صوتي للفيديوهات</li>
-                    <li>كتب صوتية (Audiobooks)</li>
-                    <li>بودكاست</li>
-                    <li>مساعد صوتي للمواقع</li>
-                </ul>
-
-                <h3>الأسعار</h3>
-                <ul>
-                    <li>مجاني: 10K حرف/شهر</li>
-                    <li>Starter: $5/شهر - 30K حرف</li>
-                    <li>Creator: $22/شهر - 100K حرف</li>
-                    <li>Pro: $99/شهر - 500K حرف</li>
-                </ul>
-            </div>
+            <p>كل ما تريد معرفته عن ElevenLabs وكيف تستخدمه لإنشاء محتوى صوتي احترافي بجودة تماثل الصوت البشري.</p>
+            <a href="#" class="read-more">اقرأ المقال ←</a>
         </article>
 
-        <!-- Article 7 -->
         <article class="article-card">
             <div class="article-meta">
                 <span class="article-tag">🤖 ذكاء اصطناعي</span>
                 <span class="article-date">1 مايو 2026</span>
             </div>
             <h2>Claude 3.5: لماذا يفضله المبرمجون على ChatGPT؟</h2>
-            <p>استعراض لمميزات Claude 3.5 الجديدة ولماذا أصبح الخيار الأول للمطورين والباحثين...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>المميزات الجديدة</h3>
-                <ul>
-                    <li>سياق 200K توكن (يمكنه قراءة كتاب كامل)</li>
-                    <li>دقة أعلى في البرمجة</li>
-                    <li>أخلاقيات AI أقوى</li>
-                    <li>سرعة استجابة مضاعفة</li>
-                </ul>
-
-                <h3>مقارنة مع ChatGPT</h3>
-                <table style="width:100%; color:var(--muted); margin:15px 0;">
-                    <tr style="border-bottom:1px solid rgba(0,212,255,0.2);">
-                        <td style="padding:10px;"><strong>الميزة</strong></td>
-                        <td style="padding:10px;"><strong>Claude 3.5</strong></td>
-                        <td style="padding:10px;"><strong>ChatGPT-4</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;">سياق المحادثة</td>
-                        <td style="padding:10px;">200K</td>
-                        <td style="padding:10px;">128K</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;">دقة البرمجة</td>
-                        <td style="padding:10px;">⭐⭐⭐⭐⭐</td>
-                        <td style="padding:10px;">⭐⭐⭐⭐</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px;">السعر</td>
-                        <td style="padding:10px;">$20/شهر</td>
-                        <td style="padding:10px;">$20/شهر</td>
-                    </tr>
-                </table>
-
-                <h3>متى تختار Claude؟</h3>
-                <ul>
-                    <li>عند العمل مع ملفات كبيرة</li>
-                    <li>للبرمجة المعقدة</li>
-                    <li>للبحث الأكاديمي العميق</li>
-                    <li>لتحليل البيانات الضخمة</li>
-                </ul>
-            </div>
+            <p>استعراض لمميزات Claude 3.5 الجديدة ولماذا أصبح الخيار الأول للمطورين والباحثين والعاملين بمجال البيانات.</p>
+            <a href="#" class="read-more">اقرأ المقال ←</a>
         </article>
-
-        <!-- Article 8 -->
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">🎨 تصميم</span>
-                <span class="article-date">30 أبريل 2026</span>
-            </div>
-            <h2>Canva Magic Studio: كل أدوات AI في مكان واحد</h2>
-            <p>Canwa أطلقت Magic Studio بميزات AI قوية. تعرف على كل الأدوات الجديدة وكيف تستخدمها...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>أدوات Magic Studio</h3>
-                <ul>
-                    <li><strong>Magic Design</strong> - تصميم كامل من وصف نصي</li>
-                    <li><strong>Magic Write</strong> - كتابة محتوى تلقائي</li>
-                    <li><strong>Magic Edit</strong> - تعديل الصور بالذكاء الاصطناعي</li>
-                    <li><strong>Magic Animate</strong> - إضافة حركة تلقائية</li>
-                    <li><strong>Magic Eraser</strong> - إزالة أي عنصر من الصورة</li>
-                </ul>
-
-                <h3>السعر</h3>
-                <p>Canva Pro: $12.99/شهر يشمل كل أدوات Magic Studio.</p>
-            </div>
-        </article>
-
-        <!-- Article 9 -->
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">💻 برمجة</span>
-                <span class="article-date">29 أبريل 2026</span>
-            </div>
-            <h2>أفضل 5 أدوات AI مجانية للمبرمجين المبتدئين</h2>
-            <p>قائمة بأفضل أدوات البرمجة بالذكاء الاصطناعي المجانية التي تساعدك في تعلم البرمجة بسرعة...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>1. GitHub Copilot Free</h3>
-                <p>60 ساعة مجانية شهرياً للطلاب ومطوري المصادر المفتوحة.</p>
-
-                <h3>2. Codeium</h3>
-                <p>بديل مجاني لـ Copilot يدعم 70+ لغة برمجة.</p>
-
-                <h3>3. Amazon CodeWhisperer</h3>
-                <p>مجاني للأفراد، يدعم Python و JavaScript و Java.</p>
-
-                <h3>4. Tabnine</h3>
-                <p>خطة مجانية تدعم JavaScript و Python و TypeScript.</p>
-
-                <h3>5. Replit Ghostwriter</h3>
-                <p>مدمج في Replit، ممتاز للمبتدئين.</p>
-            </div>
-        </article>
-
-        <!-- Article 10 -->
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">🤖 ذكاء اصطناعي</span>
-                <span class="article-date">28 أبريل 2026</span>
-            </div>
-            <h2>مستقبل الذكاء الاصطناعي 2026-2030: توقعات الخبراء</h2>
-            <p>ما الذي ينتظرنا في عالم AI خلال السنوات القادمة؟ استعراض للتوقعات والتحديات...</p>
-            <a href="#" class="read-more" onclick="toggleArticle(this); return false;">اقرأ المقال ←</a>
-            <div class="article-content">
-                <h3>2026: سنة التخصص</h3>
-                <ul>
-                    <li>نماذج متخصصة لكل مجال (طب، قانون، هندسة)</li>
-                    <li>دمج AI في كل تطبيق</li>
-                    <li>تحسين الأمان والخصوصية</li>
-                </ul>
-
-                <h3>2027-2028: AI العام</h3>
-                <ul>
-                    <li>نماذج تفهم العالم كالبشر</li>
-                    <li>روبوتات منزلية ذكية</li>
-                    <li>تعليم شخصي بالكامل</li>
-                </ul>
-
-                <h3>2029-2030: الثورة الكبرى</h3>
-                <ul>
-                    <li>سيارات ذاتية القيادة 100%</li>
-                    <li>طب دقيق بالذكاء الاصطناعي</li>
-                    <li>مساعدين شخصيين يتنبأون باحتياجاتك</li>
-                </ul>
-
-                <h3>التحديات</h3>
-                <ul>
-                    <li>الأمان السيبراني</li>
-                    <li>فقدان الوظائف</li>
-                    <li>التحيز في الخوارزميات</li>
-                    <li>الخصوصية والمراقبة</li>
-                </ul>
-            </div>
-        </article>
-
-        <!-- Banner 468x60 -->
-        <div class="ad-container ad-footer-banner" id="ad-468x60"></div>
-
-        <div class="pagination">
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn">→</button>
-        </div>
     </div>
 
-    <!-- Sidebar Ads (Desktop Only) -->
-    <div class="ad-sidebar-wrap">
-        <div class="ad-sky" id="ad-160x600"></div>
-        <div class="ad-sky-sm" id="ad-160x300"></div>
-    </div>
-
-    <!-- Mobile Sticky Banner 320x50 -->
-    <div class="ad-mobile-sticky" id="ad-320x50"></div>
-
-    <footer class="footer" id="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>🚀 ZakiHub</h3>
-                <p style="color: var(--muted); line-height: 1.6;">منصة متقدمة لاكتشاف واستكشاف أفضل أدوات الذكاء الاصطناعي في العالم.</p>
-            </div>
-            <div class="footer-section">
-                <h3>الروابط السريعة</h3>
-                <a href="index.html">الرئيسية</a>
-                <a href="blog.html">المدونة</a>
-                <a href="game.html">اللعبة</a>
-                <a href="admin.html">لوحة التحكم</a>
-            </div>
-            <div class="footer-section">
-                <h3>تابعنا</h3>
-                <a href="#">تويتر 𝕏</a>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
-            </div>
-            <div class="footer-section">
-                <h3>الدعم</h3>
-                <a href="#">مركز المساعدة</a>
-                <a href="#">الأسئلة الشائعة</a>
-                <a href="#">التواصل معنا</a>
-                <a href="#">أبلغ عن مشكلة</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 ZakiHub. جميع الحقوق محفوظة | تم بحب ❤️ من فريق ZakiHub</p>
-        </div>
-    </footer>
-
-    <script>
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 100; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.width = Math.random() * 2 + 'px';
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDuration = Math.random() * 3 + 2 + 's';
-                star.style.animationDelay = Math.random() * 2 + 's';
-                starsContainer.appendChild(star);
-            }
-        }
-
-        function toggleArticle(link) {
-            const content = link.nextElementSibling;
-            content.classList.toggle('active');
-            link.textContent = content.classList.contains('active') ? 'إخفاء المقال ↓' : 'اقرأ المقال ←';
-        }
-
-        // Banner Loader with visible container
-        function loadBanner(key, containerId, width, height) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = '';
-            const script1 = document.createElement('script');
-            script1.type = 'text/javascript';
-            script1.innerHTML = 'atOptions = {'key': '' + key + '','format': 'iframe','height': ' + height + ','width': ' + width + ','params': {}};';
-            container.appendChild(script1);
-            const script2 = document.createElement('script');
-            script2.type = 'text/javascript';
-            script2.src = 'https://www.highperformanceformat.com/' + key + '/invoke.js';
-            container.appendChild(script2);
-            container.style.background = 'rgba(0,212,255,0.05)';
-            container.style.border = '1px dashed rgba(0,212,255,0.2)';
-            container.style.borderRadius = '8px';
-            container.style.minHeight = height + 'px';
-            container.style.display = 'flex';
-            container.style.alignItems = 'center';
-            container.style.justifyContent = 'center';
-            setTimeout(() => {
-                container.style.background = '';
-                container.style.border = '';
-                container.style.display = '';
-            }, 3000);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            createStars();
-            setTimeout(() => loadBanner('bad51f87ef80d0eb81cd43d40e5401c2', 'ad-728x90', 728, 90), 500);
-            setTimeout(() => loadBanner('e68c05c95fb7752495fe2cf1a9dfdcd6', 'ad-300x250', 300, 250), 700);
-            setTimeout(() => loadBanner('6b241b3fe5278cdfa489ac924e4b78fb', 'ad-468x60', 468, 60), 900);
-            setTimeout(() => loadBanner('96531542723fc03951c9f6652c893e96', 'ad-160x300', 160, 300), 1100);
-            setTimeout(() => loadBanner('1967414f203476ae35465a7608d8429e', 'ad-160x600', 160, 600), 1300);
-            setTimeout(() => loadBanner('35078bd6fffc731bff0380b63ecf8132', 'ad-320x50', 320, 50), 1500);
-
-            setTimeout(function(){
-                var sb = document.createElement('script');
-                sb.src = 'https://pl29343495.profitablecpmratenetwork.com/cc/4f/d3/cc4fd3a658121f3e0c7c0dd88998176a.js';
-                document.body.appendChild(sb);
-            }, 3000);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

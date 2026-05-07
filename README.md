@@ -1,116 +1,88 @@
-# 🚀 ZakiHub v3.0 - Monetized Edition
+# 🚀 ZakiHub - منصة أدوات الذكاء الاصطناعي
 
-> منصة دليل أدوات الذكاء الاصطناعي مع نظام إعلانات متكامل للربح 💰
+**ZakiHub** هي منصة حديثة وشاملة لاستكشاف وتجربة أفضل أدوات الذكاء الاصطناعي في العالم.
 
-## 📦 الملفات
+## ✨ المميزات
 
-| الملف | الوصف |
-|-------|-------|
-| `index.html` | الصفحة الرئيسية مع الإعلانات |
-| `styles.css` | التصميم + أماكن الإعلانات |
-| `script.js` | JavaScript + محرك الإعلانات |
-| `game.html` | لعبة Zaki's Tool Run |
-| `admin.html` | لوحة التحكم المحلية |
-| `blog.html` | المدونة مع 6 مقالات SEO |
-| `404.html` | صفحة الخطأ |
-| `manifest.json` | إعدادات PWA |
-| `service-worker.js` | Service Worker للـ Offline |
-| `favicon.svg` | الأيقونة |
+- 🎯 **مراجعة يومية** - استعرض أفضل الأدوات الجديدة كل يوم
+- 🏆 **نظام الإنجازات** - احصل على شارات وتحديات يومية
+- 💻 **واجهة احترافية** - تصميم عصري مع أنيميشنات سلسة
+- 🔔 **إشعارات ذكية** - تلقى آخر التحديثات مباشرة
+- 🎮 **لعبة تفاعلية** - استكشف الأدوات من خلال لعبة ممتعة
+- 📰 **مدونة شاملة** - مقالات وأخبار عن عالم الذكاء الاصطناعي
 
-## 💰 نظام الإعلانات المدمج
+## 🛠️ التقنيات المستخدمة
 
-### الإعلانات النشطة:
-1. **Popunder** - يفتح عند أول نقرة
-2. **Social Bar** - يظهر بعد 3 ثواني
-3. **Native Banner** - بين الأدوات (كل 3 أدوات)
-4. **Banner 728x90** - أعلى الصفحة
-5. **Banner 300x250** - بين الأقسام
-6. **Banner 468x60** - في الفوتر
-7. **Banner 160x600** - Sidebar (Desktop)
-8. **Banner 160x300** - Sidebar (Desktop)
-9. **Banner 320x50** - Mobile Sticky
-10. **Smartlink** - على أزرار CTA (30% chance)
-11. **Interstitial** - أول زيارة فقط
+- **HTML5** - هيكل الصفحات
+- **CSS3** - التصميم والأنيميشنات
+- **JavaScript** - الوظائف التفاعلية
+- **Astro** - بناء الموقع الثابت
 
-## 🚀 خطوات النشر
+## 📋 الملفات الرئيسية
 
-### 1. رفع على GitHub Pages
+```
+ZakiHub/
+├── index.html          # الصفحة الرئيسية
+├── blog.html           # صفحة المدونة
+├── game.html           # صفحة اللعبة
+├── admin.html          # لوحة التحكم
+├── script.js           # السكريبت الرئيسي
+├── styles.css          # الأنماط العامة
+├── data.json           # بيانات الأدوات والتحديات
+├── package.json        # حزم npm
+└── astro.config.mjs    # إعدادات Astro
+```
+
+## 🚀 البدء السريع
+
+### المتطلبات
+- Node.js 20+
+- npm أو yarn
+
+### التثبيت
+
 ```bash
-# أنشئ repo جديد
-# ارفع كل الملفات
-# فعّل GitHub Pages من Settings
+# استنساخ المستودع
+git clone https://github.com/mindvoyage009-pixel/ZakiHub.git
+cd ZakiHub
+
+# تثبيت الحزم
+npm install
+
+# تشغيل بيئة التطوير
+npm run dev
+
+# بناء للإنتاج
+npm run build
+
+# معاينة الإنتاج
+npm run preview
 ```
-
-### 2. أو استخدم Netlify/Vercel
-```bash
-# اسحب وأسقط المجلد
-# أو اربط بـ GitHub repo
-```
-
-## ⚡ تخصيص الإعلانات
-
-### تغيير أكواد الإعلانات:
-افتح `script.js` وابحث عن:
-- `loadBanner('KEY', ...)` - غير الـ KEY
-- `goSmartlink()` - غير الرابط
-- `triggerPopunder()` - غير الـ script src
-- `loadSocialBar()` - غير الـ script src
-
-### إضافة إعلانات Google AdSense:
-1. سجل في [Google AdSense](https://google.com/adsense)
-2. احصل على كود الإعلان
-3. ضعه في أي `div` بـ class `ad-container`
-
-## 📊 توقعات الربح
-
-| الزيارات/يوم | تقدير الدخل/يوم |
-|-------------|----------------|
-| 1,000 | $2 - $5 |
-| 5,000 | $10 - $25 |
-| 10,000 | $25 - $60 |
-| 50,000 | $150 - $400 |
-
-*التقديرات تقريبية وتعتمد على دولة الزوار*
-
-## 🔧 تخصيص الموقع
-
-### تغيير الاسم:
-ابحث عن "ZakiHub" في `index.html` واستبدله
-
-### تغيير الألوان:
-عدل المتغيرات في `styles.css`:
-```css
-:root {
-  --primary: #00d4ff;
-  --secondary: #a78bfa;
-  --accent: #f97316;
-}
-```
-
-### إضافة أدوات:
-افتح `script.js` وأضف في مصفوفة `tools`:
-```js
-{ name: 'اسم الأداة', desc: 'الوصف', category: 'writing', emoji: '🤖' }
-```
-
-## 📱 PWA
-
-- قابل للتثبيت كتطبيق
-- يعمل Offline
-- أيقونة على الشاشة الرئيسية
-
-## ⚠️ ملاحظات مهمة
-
-1. **لا تضغط على إعلاناتك بنفسك** - Google يحظر ذلك
-2. **محتوى أصلي** - ضروري لموافقة AdSense
-3. **ترافيك حقيقي** - لا تستخدم بوتات
-4. **SEO** - اكتب مقالات عن أدوات AI لجلب زوار
 
 ## 📄 الترخيص
 
-MIT License - استخدم كما تشاء 💪
+هذا المشروع مرخص تحت رخصة MIT - انظر ملف [LICENSE](LICENSE) للتفاصيل.
+
+## 👨‍💻 المساهمة
+
+نرحب بالمساهمات! يرجى:
+
+1. عمل Fork للمستودع
+2. إنشاء فرع للميزة الجديدة (`git checkout -b feature/AmazingFeature`)
+3. عمل Commit للتغييرات (`git commit -m 'Add some AmazingFeature'`)
+4. عمل Push للفرع (`git push origin feature/AmazingFeature`)
+5. فتح Pull Request
+
+## 📧 التواصل
+
+- البريد الإلكتروني: [support@zakihub.com](mailto:support@zakihub.com)
+- تويتر: [@zakihub](https://twitter.com/zakihub)
+- LinkedIn: [ZakiHub](https://linkedin.com/company/zakihub)
+
+## 🎉 شكر وتقدير
+
+شكراً لجميع المساهمين والمستخدمين الذين يدعمون ZakiHub!
 
 ---
 
-**تم التحديث**: 2026-05-07
-**الإصدار**: v3.0 Monetized
+**تم بحب ❤️ من فريق ZakiHub**
