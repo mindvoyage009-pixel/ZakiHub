@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>لعبة Zaki's Tool Run 🎮 | لعبة استكشاف أدوات الذكاء الاصطناعي</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Zaki's Tool Run 3.0 🎮 | AI Tools Exploration Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050510;
@@ -15,7 +15,7 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: #e0e0ff;
       overflow: hidden;
@@ -79,6 +79,50 @@
       50% { transform: translateX(-50%) translateY(-100px); }
     }
     
+    .zone {
+      position: absolute;
+      height: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--bg);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .zone:hover {
+      transform: scale(1.05);
+    }
+    
+    .collectible {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: float 2s ease-in-out infinite;
+      cursor: pointer;
+      z-index: 4;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .gift-box {
+      position: absolute;
+      font-size: 2rem;
+      animation: glow 1.5s ease-in-out infinite;
+      cursor: pointer;
+      z-index: 4;
+    }
+    
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 5px var(--gold)); }
+      50% { filter: drop-shadow(0 0 20px var(--gold)); }
+    }
+    
     .start-screen {
       position: fixed;
       inset: 0;
@@ -92,7 +136,7 @@
     }
     
     .start-screen h1 {
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 3rem;
       background: linear-gradient(135deg, var(--green), var(--cyan));
       -webkit-background-clip: text;
@@ -102,7 +146,7 @@
     .start-btn {
       padding: 1rem 3rem;
       font-size: 1.3rem;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       border: none;
       border-radius: 50px;
@@ -121,6 +165,35 @@
       opacity: 0.7;
       max-width: 400px;
       line-height: 1.8;
+    }
+    
+    .char-editor {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      background: rgba(10,10,30,0.9);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .char-option {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .char-option:hover, .char-option.active {
+      border-color: var(--green);
+      transform: scale(1.1);
     }
     
     .back-btn {
@@ -143,19 +216,49 @@
       color: var(--bg);
     }
   </style>
+  <!-- [AD-1] POPUNDER -->
+    <script src="https://pl29343187.profitablecpmratenetwork.com/e0/fb/03/e0fb0368da611542da976cbf9a2d59c5.js"></script>
 </head>
 <body>
-  <a href="index.html" class="back-btn">← الرئيسية</a>
+  <a href="/" class="back-btn">← Home</a>
   
   <div class="start-screen" id="start-screen">
-    <h1>🎮 لعبة Zaki Tool Run 3.0</h1>
+    <h1>🎮 Zaki's Tool Run 3.0</h1>
     <p class="game-instructions">
-      استكشف عالم الذكاء الاصطناعي في مغامرة جانبية مثيرة!<br>
-      اقفز بين المنصات (التصنيفات)، اجمع الأدوات،<br>
-      افتح الهدايا، واحقق الأرقام القياسية!<br><br>
-      <strong>التحكم:</strong> مفاتيح الأسهم ← → للحركة | المسافة للقفز
+      Explore the world of AI in a side adventure!<br>
+      Jump between platforms (categories), collect tools,<br>
+      open gifts, and beat your records!<br><br>
+      <strong>Controls:</strong> Arrow keys ← → to move | Space to jump
     </p>
-    <button class="start-btn" onclick="startGame()">ابدأ اللعب! 🚀</button>
+    <!-- [AD-5] BANNER 300x250 -->
+    <div class="ad-container" style="margin: 15px auto; max-width: 300px;">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'e68c05c95fb7752495fe2cf1a9dfdcd6',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/e68c05c95fb7752495fe2cf1a9dfdcd6/invoke.js"></script>
+    </div>
+
+    <!-- [AD-10] BANNER 728x90 -->
+    <div class="ad-container" style="margin: 15px auto; max-width: 728px;">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'bad51f87ef80d0eb81cd43d40e5401c2',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/bad51f87ef80d0eb81cd43d40e5401c2/invoke.js"></script>
+    </div>
+
+    <button class="start-btn" onclick="window.open('https://www.profitablecpmratenetwork.com/jq0pcdxf?key=be341c6dcba5c5cd299585b0271bbbe6','_blank'); setTimeout(startGame, 800);">Start Playing! 🚀</button>
   </div>
   
   <canvas id="game-canvas"></canvas>
@@ -176,23 +279,48 @@
   </div>
   
   <div class="player" id="player">🤖</div>
+  
+  <div class="char-editor" id="char-editor" style="display: none;">
+    <button class="char-option active" onclick="setChar('🤖')">🤖</button>
+    <button class="char-option" onclick="setChar('🦊')">🦊</button>
+    <button class="char-option" onclick="setChar('🐉')">🐉</button>
+    <button class="char-option" onclick="setChar('🦄')">🦄</button>
+    <button class="char-option" onclick="setChar('👽')">👽</button>
+  </div>
 
   <script>
+    // ═══════════════════════════════════════════════════════
+    // ZAKI'S TOOL RUN 3.0 - GAME ENGINE
+    // ═══════════════════════════════════════════════════════
+    
     const canvas = document.getElementById('game-canvas');
     const ctx = canvas.getContext('2d');
     const player = document.getElementById('player');
     const startScreen = document.getElementById('start-screen');
     const gameHud = document.getElementById('game-hud');
+    const charEditor = document.getElementById('char-editor');
     
     let gameRunning = false;
     let score = 0;
     let level = 1;
+    let toolsCollected = [];
     let playerX = 50;
+    let playerY = 0;
     let velocityY = 0;
     let isJumping = false;
     let keys = {};
     
+    const categories = [
+      { name: 'Text', color: '#00ff88', icon: '📝', y: 300 },
+      { name: 'Image', color: '#ff6b9d', icon: '🎨', y: 250 },
+      { name: 'Code', color: '#00ccff', icon: '💻', y: 200 },
+      { name: 'Video', color: '#ffd700', icon: '🎬', y: 350 },
+      { name: 'Audio', color: '#b829dd', icon: '🎙️', y: 280 },
+      { name: '3D', color: '#ff8c00', icon: '🧊', y: 320 }
+    ];
+    
     const collectibles = [];
+    const gifts = [];
     
     function resize() {
       canvas.width = window.innerWidth;
@@ -204,10 +332,20 @@
     function startGame() {
       startScreen.style.display = 'none';
       gameHud.style.display = 'flex';
+      charEditor.style.display = 'flex';
       gameRunning = true;
       
+      const memory = JSON.parse(localStorage.getItem('zaki-memory') || '{}');
+      if (memory.avatar) setChar(memory.avatar);
+      
       generateCollectibles();
+      generateGifts();
+      
+      const d = JSON.parse(localStorage.getItem('zaki-dopamine') || '{}');
+      score = d.points || 0;
+      level = d.level || 1;
       updateHud();
+      
       gameLoop();
     }
     
@@ -223,9 +361,34 @@
       }
     }
     
+    function generateGifts() {
+      for (let i = 0; i < 5; i++) {
+        gifts.push({
+          x: Math.random() * (window.innerWidth - 100) + 50,
+          y: Math.random() * (window.innerHeight - 200) + 100,
+          icon: '🎁',
+          value: Math.floor(Math.random() * 200) + 50,
+          collected: false,
+          from: ['ZakiMaster', 'AI_Explorer', 'CodeNinja'][Math.floor(Math.random() * 3)]
+        });
+      }
+    }
+    
+    function setChar(char) {
+      player.textContent = char;
+      document.querySelectorAll('.char-option').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === char);
+      });
+      
+      const memory = JSON.parse(localStorage.getItem('zaki-memory') || '{}');
+      memory.avatar = char;
+      localStorage.setItem('zaki-memory', JSON.stringify(memory));
+    }
+    
     function updateHud() {
       document.getElementById('score').textContent = score.toLocaleString();
       document.getElementById('level').textContent = level;
+      document.getElementById('tools-count').textContent = toolsCollected.length;
     }
     
     document.addEventListener('keydown', (e) => {
@@ -242,10 +405,48 @@
       keys[e.key] = false;
     });
     
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+      const diff = e.touches[0].clientX - touchStartX;
+      playerX += diff * 0.5;
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    document.addEventListener('touchend', () => {
+      if (!isJumping) {
+        velocityY = -15;
+        isJumping = true;
+      }
+    });
+    
     function gameLoop() {
       if (!gameRunning) return;
       
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      categories.forEach((cat, i) => {
+        const x = (i * (canvas.width / categories.length)) + 50;
+        const width = canvas.width / categories.length - 100;
+        
+        ctx.fillStyle = cat.color + '30';
+        ctx.fillRect(x, cat.y, width, 20);
+        ctx.fillStyle = cat.color;
+        ctx.font = 'bold 12px Inter';
+        ctx.textAlign = 'center';
+        ctx.fillText(cat.icon + ' ' + cat.name, x + width/2, cat.y - 10);
+        
+        const playerRect = player.getBoundingClientRect();
+        if (playerRect.left > x && playerRect.right < x + width &&
+            Math.abs(playerRect.bottom - cat.y) < 20 && velocityY >= 0) {
+          velocityY = 0;
+          isJumping = false;
+          player.style.bottom = (canvas.height - cat.y - playerRect.height) + 'px';
+        }
+      });
       
       if (keys['ArrowLeft']) playerX -= 5;
       if (keys['ArrowRight']) playerX += 5;
@@ -281,11 +482,80 @@
           item.collected = true;
           score += item.value;
           updateHud();
+          
+          const d = JSON.parse(localStorage.getItem('zaki-dopamine') || '{}');
+          d.points = score;
+          localStorage.setItem('zaki-dopamine', JSON.stringify(d));
+          localStorage.setItem('zaki-points', score);
+          
+          showGameToast(`+${item.value} points!`);
+        }
+      });
+      
+      gifts.forEach((gift, i) => {
+        if (gift.collected) return;
+        
+        ctx.font = '25px serif';
+        ctx.fillText(gift.icon, gift.x, gift.y);
+        
+        const pRect = player.getBoundingClientRect();
+        const distance = Math.sqrt(
+          Math.pow(pRect.left + 25 - gift.x, 2) + 
+          Math.pow(pRect.top + 25 - gift.y, 2)
+        );
+        
+        if (distance < 40) {
+          gift.collected = true;
+          score += gift.value;
+          updateHud();
+          showGameToast(`🎁 Gift from ${gift.from}! +${gift.value}`);
+          
+          const d = JSON.parse(localStorage.getItem('zaki-dopamine') || '{}');
+          d.points = score;
+          localStorage.setItem('zaki-dopamine', JSON.stringify(d));
+          localStorage.setItem('zaki-points', score);
         }
       });
       
       requestAnimationFrame(gameLoop);
     }
+    
+    function showGameToast(msg) {
+      const toast = document.createElement('div');
+      toast.style.cssText = `
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,255,136,0.9);
+        color: #050510;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        z-index: 1000;
+        animation: fadeInUp 0.3s ease;
+      `;
+      toast.textContent = msg;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
+    }
   </script>
+<!-- [AD-9] MOBILE STICKY BANNER 320x50 -->
+    <div class="ad-container ad-mobile-sticky">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '35078bd6fffc731bff0380b63ecf8132',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/35078bd6fffc731bff0380b63ecf8132/invoke.js"></script>
+    </div>
+
+    <!-- [AD-6] SOCIAL BAR -->
+    <script src="https://pl29343495.profitablecpmratenetwork.com/cc/4f/d3/cc4fd3a658121f3e0c7c0dd88998176a.js"></script>
+
 </body>
 </html>
