@@ -1,5 +1,4 @@
-
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -638,4 +637,138 @@
 /* ─── Hide empty ad containers gracefully ─── */
 .ad-container:empty {
   display: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   MONETIZATION ENHANCEMENTS v2.0
+   ═══════════════════════════════════════════════════════ */
+
+/* Ad entrance animations */
+.ad-container {
+  animation: adFadeIn 0.6s ease-out;
+}
+
+@keyframes adFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure mobile sticky is always on top */
+.ad-mobile-sticky {
+  z-index: 99999 !important;
+}
+
+/* Sidebar ads fixed positioning enhancement */
+.ad-sidebar-wrap {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  width: 160px;
+  z-index: 99;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ad-sky {
+  width: 160px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
+}
+
+.ad-sky-sm {
+  width: 160px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Show sidebar on large desktops */
+@media (min-width: 1200px) {
+  .ad-sidebar-wrap {
+    display: flex !important;
+  }
+  body {
+    padding-right: 180px !important;
+  }
+}
+
+/* Mobile sticky enhancement */
+@media (max-width: 767px) {
+  .ad-mobile-sticky {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    background: rgba(2, 6, 23, 0.98);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 5px 0;
+    backdrop-filter: blur(10px);
+  }
+  
+  .footer {
+    padding-bottom: 70px !important;
+  }
+  
+  .ad-top {
+    max-width: 320px;
+    min-height: 50px;
+  }
+  
+  .ad-between {
+    max-width: 300px;
+  }
+  
+  .ad-footer-banner {
+    max-width: 320px;
+    min-height: 50px;
+  }
+}
+
+/* Smartlink button glow effect */
+.btn-primary[onclick*="profitablecpmratenetwork"],
+.start-btn[onclick*="profitablecpmratenetwork"],
+.read-more[href*="profitablecpmratenetwork"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary[onclick*="profitablecpmratenetwork"]::after,
+.start-btn[onclick*="profitablecpmratenetwork"]::after {
+  content: ' 💰';
+  font-size: 0.8em;
+}
+
+/* Ad label for transparency */
+.ad-container::before {
+  content: 'Advertisement';
+  display: block;
+  text-align: center;
+  font-size: 0.65rem;
+  color: rgba(100, 116, 139, 0.6);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Native banner container fix */
+#container-2dd3e1bbf97c4c9ff588286aa0579fd8 {
+  min-height: 250px;
+  width: 100%;
+}
+
+/* Hide empty ads gracefully */
+.ad-container:empty {
+  display: none !important;
+}
+
+/* Game page ad overrides */
+#game-canvas ~ .ad-mobile-sticky {
+  z-index: 99999 !important;
 }
